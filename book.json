@@ -1,0 +1,9 @@
+{
+	"name": "解析技术",
+	"introduction": "编译器前端经典书籍《Parsing Techniques》的中文译本。",
+	"path": {
+		"content": "eBook",
+		"readme": "README.md"
+	}
+
+}
