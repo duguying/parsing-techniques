@@ -10,7 +10,7 @@
 
 Kees van Reeuwijk曾经半开玩笑地称呼我们的书为“濒危语法分析的保留”。我们同意这种称呼，但是不完全同意，因为它远不止于此，我们受之无愧。在这本书中的几种算法非常有局限性或者只是没有实用价值。我们收录了它们，因为我们觉得它们体现了有趣的想法，并启迪了思维；它们也可能成长并且获得实用价值。但是我们同样包含了许多有实用价值但是很少被用到的算法；在这里提及它们可能改善其在世界的状况。
 
-## Exercises and Problems
+## 练习和问题
 
 This book is not a textbook in the school sense of the word. Few universities have a course in Parsing Techniques, and, as stated in the Preface to the First Edition, read- ers will have very different motivations to use this book. We have therefore included hardly any questions or tasks that exercise the material contained within this book; readers can no doubt make up such tasks for themselves. The questions posed in the problem sections at the end of each chapter usually require the reader to step outside the bounds of the covered material. The problems have been divided into three not too well-defined classes:
 
