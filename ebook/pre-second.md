@@ -12,7 +12,7 @@ Kees van Reeuwijk曾经半开玩笑地称呼我们的书为“濒危语法分析
 
 ## 练习和问题
 
-这本书不是不是学校中所谓的教科书。Few universities have a course in Parsing Techniques, and, as stated in the Preface to the First Edition, read- ers will have very different motivations to use this book. We have therefore included hardly any questions or tasks that exercise the material contained within this book; readers can no doubt make up such tasks for themselves. The questions posed in the problem sections at the end of each chapter usually require the reader to step outside the bounds of the covered material. The problems have been divided into three not too well-defined classes:
+这本书不是不是学校中所谓的教科书。比较少的大学在解析技术开设课程，并且，如第一版序言所述，读者有各不相同的动机来使用这本书。 We have therefore included hardly any questions or tasks that exercise the material contained within this book; readers can no doubt make up such tasks for themselves. The questions posed in the problem sections at the end of each chapter usually require the reader to step outside the bounds of the covered material. The problems have been divided into three not too well-defined classes:
 
 - not marked — probably doable in a few minutes to a couple of hours.
 - marked Project — probably a lot of work, but almost certainly doable.
