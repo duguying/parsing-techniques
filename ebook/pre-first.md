@@ -9,7 +9,7 @@
 我们写作这本书的主要目的，希望通过出版书籍的方式，来揭示隐藏于于某些文字表面下的解析的存在，就像这个公式：
 	Let P be a mapping VN−Φ→2(VN∪VT )∗and H a homomorphism . . .
 
-读者并不需要一定懂得某种编程语言。书中确实有两三个Pascal语言的程序，不过只是用来展示而已，在对解析的阐述中这个并不重要。真正需要具有的时对算法的了解，尤其时递归算法（recursion）。Howard Johnston (Prentice-Hall, 1985)写的*Learning to program*或者Richard Bornat (Prentice-Hall 1987)写的<u>Programming from first principles</u>，这些书已经为我们提供了足够多的知识储备（虽然似乎有些过分的详细了）。选择Pascal，是因为这差不多是唯一一门在计算机领域之外被使用的编程语言了。
+读者并不需要一定懂得某种编程语言。书中确实有两三个Pascal语言的程序，不过只是用来展示而已，在对解析的阐述中这个并不重要。真正需要具有的时对算法的了解，尤其时递归算法（recursion）。Howard Johnston (Prentice-Hall, 1985)写的<i>Learning to program</i>或者Richard Bornat (Prentice-Hall 1987)写的<u>Programming from first principles</u>，这些书已经为我们提供了足够多的知识储备（虽然似乎有些过分的详细了）。选择Pascal，是因为这差不多是唯一一门在计算机领域之外被使用的编程语言了。
 
 结尾处符的大量参考文献应该是本书的一大特色了。对参考文献感兴趣的读者可能比我们预期的还要多，尤其是对本书中所提及的某些领域有所了解的读者，不管是不是通过这本书所产生的了解。<u>参考文献通过列表形式展示，这样更利于读者查找；批注放在了文章的页脚，并且也在书尾列出，目的是希望这些批注能像里程碑一样可以帮助读者在阅读时更好的理解。</u>
 
