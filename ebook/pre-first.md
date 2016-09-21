@@ -1,2 +1,32 @@
 # 第一版前言
 
+语法解析（句法分析）是计算机科学中最好理解分支机构之一。解析器已经被广泛应用于大量的学科︰例如，计算机科学（编译器构造、数据库接口、自描述数据库、人工智能），语言学（文本分析、语料库分析、机器翻译、圣经的文本分析）、文档编制和格式转换、排版化学公式中和在染色体识别等等;解析器可以在大量的学科中使用（也许已经在使用中了）。因此，现今还没有一本向非专业人士系统介绍解析技术的书籍出版，真的是一件很奇怪的事情。其中的一个原因可能是，解析素来被认为是一个“难题”。不过，根据我们在研究阿姆斯特丹编译器（Amsterdam Compiler Kit）以及在讲解编译器构造的经验，解析技术可以通过一些简明的方式来解释说明。本书就是在这样的情况下出版的。
+
+本书并不是只单一的面向某一部分读者。相反，在编写时，我们一直在努力让本书适合于学生、各学科的老师、各个行业不懂解析的人、各种科学报刊的狂热读者、等等等等。这项技术将很难以课程形式出现，因为对于这种定时开讲的内容固定的教学模式，并不适合上面提到的复杂的读者群体；这就是我们出版这本书的目的，它可以让你在需要的时候，在任何时间任何地点没有障碍的获取你需要的知识。
+
+要应对这样一个复杂的读者群体，是有一定的困难的（当然也有好处）。本书虽然没有明显的使用数学理论，但不可避免的书中也蕴含了大量的额数学思想。大部分解析技术的专业术语在书中都给出了明确的定义，但仍然有部分处于学科边缘的术语我们没有进行定义。每一位参与过非自己研究领域的主题研究的读者，应该都能明白这种情况。读者们可以跳过这些术语，或者用自己相对熟悉的东西来进行替代，然后你当然不希望这个术语出现的太频繁。当然书中也会有一些地方，会让读者觉得讲述的非常明确易懂（也许本段就是这样的）。有一点可能会让读者们感到欣慰的就是，阅读这本书并不会是浪费时间，或者像你在上一堂专业课时只能盯着窗外那样难以理解老师讲的内容，而只能消磨一下时间。
+
+我们写作这本书的主要目的，希望通过出版书籍的方式，来揭示隐藏于于某些文字表面下的解析的存在，就像这个公式：
+	<u>Let P be a mapping VN−Φ→2(VN∪VT )∗and H a homomorphism . . .</u>
+
+读者并不需要一定懂得某种编程语言。书中确实有两三个Pascal语言的程序，不过只是用来展示而已，在对解析的阐述中这个并不重要。真正需要具有的时对算法的了解，尤其时递归算法（recursion）。Howard Johnston (Prentice-Hall, 1985)写的<u>Learning to program</u>或者Richard Bornat (Prentice-Hall 1987)写的<u>Programming from first principles</u>，这些书已经为我们提供了足够多的知识储备（虽然似乎有些过分的详细了）。选择Pascal，是因为这差不多是唯一一门在计算机领域之外被使用的编程语言了。
+
+结尾处符的大量参考文献应该是本书的一大特色了。对参考文献感兴趣的读者可能比我们预期的还要多，尤其是对本书中所提及的某些领域有所了解的读者，不管是不是通过这本书所产生的了解。<u>参考文献通过列表形式展示，这样更利于读者查找；批注放在了文章的页脚，并且也在书尾列出，目的是希望这些批注能像里程碑一样可以帮助读者在阅读时更好的理解。</u>
+
+On the subject of applications of parsers, this book is vague. Although we suggest
+a number of applications in Chapter 1, we lack the expertise to supply details.
+It is obvious that musical compositions possess a structure which can largely be described
+by a grammar and thus is amenable to parsing, but we shall have to leave it
+to the musicologists to implement the idea. It was less obvious to us that behaviour
+at corporate meetings proceeds according to a grammar, but we are told that this is
+so and that it is a subject of socio-psychological research.
+
+**致谢**
+在此感谢在我们编写本书的过程中，为我们提供过帮助的人们。Marion de Krieger 为我们检索了无数的书籍和期刊文章的复印版，正是有了她的努力，我们才能毫不费力的将书目收纳的如此完备。Ed Keizer 做好了我们和pic|tbl|eqn|psfig|troff这一堆乱七八糟的东西之间的修复工作，他无数次的纠正了被我们滥用、重用或者明显被误用了的地方。Leo van Moergestel 使用硬件资源为我们完成了大量的工作，而这是我们这些门外汉所不会使用的。同时我们也要感谢Erik Baalbergen, Frans Kaashoek, Erik Groeneveld, Gerco Ballintijn , Jaco Imthorn 以及Egon Amada，他们为我们提供了大量的准确的批注。本书结尾的倒数第二章，出自Arwen Grune 。而Ilana和Lily Grune 为我们做了大量的录入工作。
+
+感谢Faculteit Wiskunde en Informatica of the Vrije Universiteit 允许我们使用了他们设备。
+
+同时，感谢数百位的专家，他们的作品为我们提供了那么多巧妙而精致的算法，并给出了这些算法的使用技巧。希望在我们列举的参考书目中没有遗漏任何一位。
+
+Amsterdam, Amstelveen Dick Grune
+1990年7月   于Ceriel J.H. Jacobs
