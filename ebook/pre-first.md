@@ -22,8 +22,8 @@
 
 同时，感谢数百位的专家，他们的作品为我们提供了那么多巧妙而精致的算法，并给出了这些算法的使用技巧。希望在我们列举的参考书目中没有遗漏任何一位。
 
-<u>Dick Grune</u>
+*Dick Grune*
 
-<u>Ceriel J.H. Jacobs</u>  
+*Ceriel J.H. Jacobs*
 
 1990年7月 于Amsterdam, Amstelveen

@@ -38,8 +38,8 @@ So in the theoretical future of parsing we see considerable simplification throu
 
 The practical future of parsing may lie in advanced pattern recognition, in addition to its traditional tasks; the practical contributions of parsing by intersection are again not clear.
 
-<u>Dick Grune</u>
+*Dick Grune*
 
-<u>Ceriel J.H. Jacobs</u>  
+*Ceriel J.H. Jacobs*
 
 2007年6月 于Amsterdam, Amstelveen
