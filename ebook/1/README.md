@@ -10,9 +10,7 @@
 
 第三个原因是，部分丢失的信息，可以通过解析器，尤其是错误修复解析器（error-repairing parsers）来完善。如果能给出合理的语法，那么就能设计出一个错误修复解析器，来修复古阿卡德人的泥简（clay tablets）。
 
-The reverse problem—given a (large) set of sentences, find the/a grammar which produces them—is called grammatical inference. Much less is known about it than about parsing, but progress is being made. The subject would require a complete book. Proceedings of the International Colloquiums on Grammatical Inference are published as Lecture Notes in Artificial Intelligence by Springer.
-
+给定一堆句子，从中找出产生它们的语法结构，这种反向问题被称为文法推断。这个问题比解析技术，人们对其的了解要更少，不过仍然在进行当中。这个问题不在本书范围之内。国际文法推断座谈会（International Colloquiums on Grammatical Inference）的纪要由Springer出版，名为Lecture Notes in Artificial Intelligence。
 
 	注：
 	1 如果不存在元素之间的限制，序列仍然是有语法的，只不过语法也许十分繁杂并且难以理解。
-	[^1] 如果不存在元素之间的限制，序列仍然是有语法的，只不过语法也许十分繁杂并且难以理解。
