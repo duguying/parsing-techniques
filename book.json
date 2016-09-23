@@ -4,6 +4,9 @@
 	"path": {
 		"content": "eBook",
 		"readme": "README.md"
-	}
-
+	},
+	"pdf": {
+		"paperSize": "b5"
+	},
+	"plugins": ["latex-codecogs"]
 }
