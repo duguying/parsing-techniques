@@ -34,12 +34,20 @@ Kees van Reeuwijk曾经半开玩笑地称呼我们的书为“濒危语法分析
 
 *如果将来有幸能出版第三版，我们将会致力于精简内容，尽量的精细化（除了参考文献部分）。因为解析算法都大同小异，当你进行深入研究后就会有这样的发现，并且似乎有大一统的趋势。大体来说，差不多所有的解析都是在左递归保护下通过自顶向下的搜索来完成的；这么说是没有问题的，即便是传统的自底向上搜索技术也是如此，比如LR（1），而且自顶向下搜索技术是建立在LR（1）解析表的基础之上的。Earley方法（Earley's method）很明显是通过一些方式来区分自顶向下搜索和自底向上搜索的。表格解析的记忆机制，可以有效的减轻指数级别的搜索所带来的疼痛。并且它似乎可以在将深度优先搜索算法转化为广度优先搜索算法过程中，产生许多广义确定性算法；这方面在Sikkel的博士论文[158]中有详细论述。上述汇集起来基本上就涵盖了本书提到的所有算法，包括学科交叉处涉及的解析算法。存粹的自底向上，不包含自顶向下组件的解析器，是很罕见的并且功能也不强大。*
 
-So in the theoretical future of parsing we see considerable simplification through unification of algorithms; the role that parsing by intersection can play in this is not clear. The simplification does not seem to extend to formal languages: it is still as difficult to prove the intuitively obvious fact that all LL(1) grammars are LR(1) as it was 35 years ago.
+关于解析理论的未来，可以预见算法的统一将会大大的简化解析的复杂程度；而在领域交叉处，解析技术将会扮演一个上面样的角色尚不得而知。这种简化似乎并不会延伸到正式语言领域：它将依旧难以使用直观的事实来证明所有LL（1）语法就是LR（1），就像35年前一样。
 
-The practical future of parsing may lie in advanced pattern recognition, in addition to its traditional tasks; the practical contributions of parsing by intersection are again not clear.
+解析技术最实际的未来可能潜藏在先进的模式识别中，但不包含这个模式的默认任务；然而，在领域交叉处，解析技术所将扮演的角色依旧不甚明朗。
 
 *Dick Grune*
 
 *Ceriel J.H. Jacobs*
 
 2007年6月 于Amsterdam, Amstelveen
+
+
+# 致谢
+感谢E. Bermudez, Stuart Broad, Peter Bumbulis, Salvador Cavadini, Carl Cerecke, Julia Dain, Akim Demaille, Matthew Estes,Wan Fokkink, Brian Ford, Richard Frost, Clemens Grabmayer, Robert Grimm, Karin Harbusch, Stephen Horne, Jaco Imthorn, Quinn Tyler Jackson, Adrian Johnstone, Michiel Koens, Jaroslav Král, Olivier Lecarme, Lillian Lee, Olivier Lefevre, Joop Leo, JianHua Li, Neil Mitchell, Peter Pepper, Wim Pijls, José F. Quesada, Kees van Reeuwijk, Walter L. Ruzzo, Lothar Schmitz, Sylvain Schmitz, Thomas Schoebel-Theuer, Klaas Sikkel, Michael Sperberg-McQueen, Michal Žemliˇcka, Hans Åberg，等等，感谢他们寄给我们关于第一版的信件，评论和勘误表。并且在此特别感谢阅读本书初稿的Kees van Reeuwijk 和Sylvain Schmitz当然还有我们这些作者，审阅初稿对本书的出版有着重大的作用。
+
+感谢Faculteit Wiskunde en Informatica of the Vrije Universiteit 允许我们使用了他们设备。
+
+同时，感谢本书结尾处列出的将近1500位作者以及他们所研究的美妙的算法，并且让我们可以使用这些算法。这本书的每一页内容，都是建立在这些算法的基础上的。
