@@ -6,7 +6,7 @@
    * [1.1 解析技术](ebook/1/1.md)
    * [1.2 使用方法](ebook/1/2.md)
    * [1.3 内容概要](ebook/1/3.md)
-   * [1.4 The Annotated Bibliography](ebook/1/4.md)
+   * [1.4 参考文献](ebook/1/4.md)
 * [2 语法，发源之地](ebook/2/README.md)
    * [2.1 语言，一个无限的集合](ebook/2/1/README.md)
       * [2.1.1 语言](ebook/2/1/1.md)
