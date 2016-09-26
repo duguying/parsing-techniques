@@ -4,4 +4,6 @@
 
 《解析技术》是编译器前端经典书籍《Parsing Techniques》的中文译本。
 
-### 译者：Agnes Huang , Rex Lee
+### 译者
+- Agnes Huang
+- Rex Lee
