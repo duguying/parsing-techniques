@@ -16,4 +16,4 @@
    * [2.2 正式语法](ebook/2/2/README.md)
       * [2.2.1 正式语法的形式主义](ebook/2/2/1.md)
       * [2.2.1 通过正式语法生成句子](ebook/2/2/2.md)
-      * [2.2.1 The Expressive Power of Formal Grammars](ebook/2/2/3.md)
+      * [2.2.1 正式语法的表达力量](ebook/2/2/3.md)
