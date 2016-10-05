@@ -17,7 +17,7 @@
       * [2.2.1 正式语法的形式主义](ebook/2/2/1.md)
       * [2.2.2 通过正式语法生成句子](ebook/2/2/2.md)
       * [2.2.3 正式语法的表达力量](ebook/2/2/3.md)
-   * [2.3 The Chomsky Hierarchy of Grammars and Languages](ebook/2/3/README.md)
+   * [2.3 语法和语言的Chomsky层次结构](ebook/2/3/README.md)
       * [2.3.1 Type 1 Grammars](ebook/2/3/1.md)
       * [2.3.2 Type 2 Grammars](ebook/2/3/2.md)
       * [2.3.3 Type 3 Grammars](ebook/2/3/3.md)
