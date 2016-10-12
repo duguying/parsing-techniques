@@ -23,3 +23,7 @@
       * [2.3.3 3型语法](ebook/2/3/3.md)
       * [2.3.4 4型语法](ebook/2/3/4.md)
       * [2.3.5 结论](ebook/2/3/5.md)
+   * [2.4 用语法生成句子](ebook/2/4/README.md)
+      * [2.4.1 短语结构案例](ebook/2/4/1.md)
+      * [2.4.2 The CS Case](ebook/2/4/2.md)
+      * [2.4.3 The CF Case](ebook/2/4/3.md)
