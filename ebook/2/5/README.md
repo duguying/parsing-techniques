@@ -1,4 +1,4 @@
-# 2.5 收缩或不收缩
+# 2.5 收敛或不收敛
 
 在前面的段落中，关于是否一个规则的右侧要比其左侧简短，有时我们很明确但有时我们又是含糊不清的。0型规则应该说肯定是收缩的类型，而单调型规则肯定不是，2型和3型只有在生成空集（ε）时才是收缩的；这些都是肯定的。
 
@@ -28,20 +28,18 @@
 
 因为**zero-or-more-bits-of-info**将会生成空字符串，在其他字符串之间，至少在其语法中使用的规则之一是ε规则；在扩展记法中的 <sup>*</sup> 已经意味着ε规则了。 在使用者的角度来看，上述输入的定义很好的解释了这个问题，并且就是我们想要的。
 
-Any attempt to write an ε-free grammar for this input will end up defining a notion that comprises some of the later bits-of-info together with the question (since the question is the only non-empty part, it must occur in all rules involved!) But such a notion does not fit our problem at all and is an artifact:
+任何试图为这个输入写ε规则，最终都会定义一个概念，包含后来的bits-of-info和问题一起（因为这个问题是唯一的非空部分，所以它必须出现在所有有关的规则中）。但是这个定义根本不是我们想要的，而且它是一个半成品：
 
 ![图4](../../img/2.5_4.png)
 
-As a grammar becomes more and more complicated, the requirement that it be ε-free becomes more and more of a nuisance: the grammar is working against us, not for us.
+随着语法变得越来越复杂，其是ε无关的要求就变得越来越令人讨厌：语法在和我们作对，而不是在为我们工作。
 
-This presents no problem from a theoretical point of view: any CF language can be described by an ε-free CF grammar and ε-rules are never needed. Better still, any grammar with ε-rules can be mechanically transformed into an ε-free grammar for the same language.We saw an example of such a transformation above and details of the algorithm are given in Section 4.2.3.1. But the price we pay is that of any grammar transformation: it is no longer our grammar and it reflects the original structure less well.
+从理论角度来看这不成问题：任何CF语法都能被一个ε无关语法描述，并且ε规则在也不被需要。更妙的是任何带有ε规则的语法都能被转化为ε无关的语法，作为同一种语言。在以上示例中我们看到了这种转变，而算法详细将在4.2.3.1节讲述。但是我们付出的代价是，对任何语法的转换：这不在是我们的语法，并且它极少的反应原始结构。
 
-The bottom line is that the practitioner finds the ε-rule to be a useful tool, and it would be interesting to see if there exists a hierarchy of non-monotonic grammars alongside the usual Chomsky hierarchy. To a large extend there is: Type 2 and Type 3 grammars need not be monotonic (since they can always be made so if the need arises); it turns out that context-sensitive grammars with shrinking rules are equivalent to unrestricted Type 0 grammars; and monotonic grammars with ε-rules are also equivalent to Type 0 grammars. We can now draw the two hierarchies in one picture; see Figure 2.20. Drawn lines separate grammar types with different power. Conceptually different grammar types with the same power are separated by blank space. We see that if we insist on non-monotonicity, the distinction between Type 0 and Type 1 disappears.
+底线是研究人员发现ε规则是一个有用的工具，并且除了通常的Chomsky层次结构外，是否存在非单调语法的层次结构，我们拭目以待。一个更大的扩展：2型和3型语法不需要是单调的（因为如果有需要，它们总是可以变成这样）；并且收敛的上下文相关语法总是等同于无限制的0型语法；而蕴含ε规则的单调语法总是等同于0型语法。系暗转我们可以把这两个层次画在一张图里面；见图Fig 2.20。将不同作用的语法类型用线条分隔。作用相同但理论上不同的语法用空格分隔。可以看到，如果我们坚持非单调性，那0型和1型的区别就消失了。
 
-A special case arises if the language of a Type 1 to Type 3 grammar itself contains the empty string. This cannot be incorporated into the grammar in the monotonic hierarchy since the start symbol already has length 1 and no monotonic rule can make it shrink. So the empty string has to be attached as a special property to the grammar. No such problem occurs in the non-monotonic hierarchy.
+如果1型到3型语法本身包含空字符串，那就出现一个特殊的情况。这不能被纳入单调层次结构的语法中，因为其起始符号长度已经为1且没有单调规则能让它收敛。所以空字符串应该被重视作为语法的一个特殊属性。这样的问题不会出现在非单调层次结构中。
 
-Many parsing methods will in principle work for ε-free grammars only: if something does not produce anything, you can’t very well see if it’s there. Often the parsing method can be doctored to handle ε-rules, but that invariably increases the complexity of the method. It is probably fair to say that this book would be at least 30%
+许多解析方法原则上只为ε无关语法工作：如果一个东西什么都不能产生，那你可能不太容易发现它是否在那。通常解析方法可以修改来控制ε规则，但这总是会增加方法的复杂度。这么说可能也是公平的，这本书将薄30%，如果ε规则不存在的花——不过，语法就要损失不止30%的价值了！
 
 ![图5 Fig 2.20](../../img/2.5_5-Fig.2.20.png)
-
-thinner if ε-rules did not exist — but then grammars would lose much more than 30% of their usefulness!
