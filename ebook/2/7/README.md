@@ -1,3 +1,3 @@
-# 2.7 The Limitations of CF and FS Grammars
+# 2.7 CF和FS语法的限制
 
-When one has been working for a while with CF grammars, one gradually gets the feeling that almost anything could be expressed in a CF grammar. That there are, however, serious limitations to what can be said by a CF grammar is shown by the famous uvwxy theorem, which is explained below.
+当使用CF语法工作一段时间后，你就会渐渐感觉到似任何东西都能用一个CF来进行描述。然而，CF语法能描述的却有着严重的限制，按照著名的*uvwxy*理论的说法，下面将进行解释。

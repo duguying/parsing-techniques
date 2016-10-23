@@ -29,6 +29,6 @@
       * [2.4.3 CF案例](ebook/2/4/3.md)
    * [2.5 收敛或不收敛](ebook/2/5/README.md)
    * [2.6 生成空语言的语法](ebook/2/6/README.md)
-   * [2.7 The Limitations of CF and FS Grammars](ebook/2/7/README.md)
+   * [2.7 CF和FS语法的限制](ebook/2/7/README.md)
       * [2.7.1 The uvwxy Theorem](ebook/2/7/1.md)
       * [2.7.2 The uvw Theorem](ebook/2/7/2.md)
