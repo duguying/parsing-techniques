@@ -16,8 +16,8 @@
 
 ##### 支付宝
 
-![图1 Fig 2.17](./ebook/img/donate_alipay.jpg)
+<img src="./ebook/img/donate_alipay.jpg" alt="支付宝" style="width:50%"/>
 
 ##### 微信
 
-![图1 Fig 2.17](./ebook/img/donate_wx.png)
+<img src="./ebook/img/donate_wx.png" alt="微信" style="width:50%"/>
