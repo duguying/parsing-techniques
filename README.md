@@ -11,3 +11,13 @@
 ### 译者
 - Agnes Huang
 - Rex Lee
+
+### 捐助
+
+##### 支付宝
+
+![图1 Fig 2.17](./ebook/img/donate_alipay.png)
+
+##### 微信
+
+![图1 Fig 2.17](./ebook/img/donate_wx.jpg)
