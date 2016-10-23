@@ -21,3 +21,6 @@
 ##### 微信
 
 <img src="./ebook/img/donate_wx.png" alt="微信" style="width:50%"/>
+
+||昵称||金额||
+||独孤影||￥10.00||
