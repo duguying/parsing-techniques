@@ -30,5 +30,5 @@
    * [2.5 收敛或不收敛](ebook/2/5/README.md)
    * [2.6 生成空语言的语法](ebook/2/6/README.md)
    * [2.7 CF和FS语法的限制](ebook/2/7/README.md)
-      * [2.7.1 The uvwxy Theorem](ebook/2/7/1.md)
-      * [2.7.2 The uvw Theorem](ebook/2/7/2.md)
+      * [2.7.1 uvwxy理论](ebook/2/7/1.md)
+      * [2.7.2 uvw理论](ebook/2/7/2.md)
