@@ -32,3 +32,4 @@
    * [2.7 CF和FS语法的限制](ebook/2/7/README.md)
       * [2.7.1 uvwxy理论](ebook/2/7/1.md)
       * [2.7.2 uvw理论](ebook/2/7/2.md)
+   * [2.8 作为转换图的CF和FS语法](ebook/2/8/README.md)
