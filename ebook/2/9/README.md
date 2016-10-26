@@ -1,13 +1,13 @@
-# 2.9 Hygiene in Context-Free Grammars
+# 2.9 上下文无关语法的健全
 
-All types of grammars can contain useless rules, rules that cannot play a role in any successful production process. A production process is successful when it results in a terminal string. Production attempts can be unsuccessful by getting stuck (no further substitution possible) or by entering a situation in which no substitution sequence will ever remove all non-terminals. An example of a Type 0 grammar that can get stuck is
+所有种类的语法都可能包含无用的规则，这些规则在任何成功的生成过程中都不能成为一个有用的角色。一个生成过程是成功的，当它一一个终结符结尾时。生成尝试可能失败，通过卡住（下一步没有可替代的）或者进入一种没有替代序列能移除掉所有的非终结符的境地的情况。0型语法被卡住的一个示例如下：
 
-![图1]()
+![图1](../../img/2.9_1.png)
 
-When we start with the first rule for S, all goes well and we produce the terminal string x. But when we start with rule 2 for S we get stuck, and when we start with rule 3, we get ourselves in an infinite loop, producing more and more Cs. Rules 2, 3 and 5 can never occur in a successful production process: they are useless rules, and can be removed from the grammar without affecting the language produced.
+当我们从**S**的第一个规则开始，一切都进展顺利并且生成了终结符**x**。但是当我们从**S**的第二条规则（规则2）开始时，我们就被卡住了，而当我们从规则3开始时，我们就发现进入了一个无限循环中，生成越来越多的**C**。规则2、3和5永远都不会产生一个成功的生成过程：他们是无意义的规则，并且也无法在不影响语言生成的情况下从语法中移除掉。
 
-Useless rules are not a fundamental problem: they do not obstruct the normal production process. Still, they are dead wood in the grammar, and one would like to remove them. Also, when they occur in a grammar specified by a programmer, they probably point at some error, and one would like to detect them and give warning or error messages.
+无用的规则并不是根本性的问题：它们不会妨碍正常的生成过程。尽管如此，它们依旧是语法中的枯木，而总有人会想移除它们。并且，当他们出现在由程序员指定的语法中时，它们可能会指向某些错误，那就会想要检测它们并给出警告或错误信息。
 
-The problems with the above grammar were easy to understand, but it can be shown that in general it is undecidable whether a rule in a Type 0 or 1 grammar is useless: there cannot be an algorithm that does it correctly in all cases. For contextfree grammars the situation is different, however, and the problem is rather easily solved.
+上述语法的问题很容易理解，但可以表明，大多数情况下是很难判定在0型或1型语法中的一条规则是无用的：不可能有一种算法能在所有情况下都正确判断。然而，对上下文无关语法来说，这个问题就是相当容易解决的了。
 
-Rules in a context-free grammar can be useless through three causes: they may contain undefined non-terminals, they may not be reachable from the start symbol, and they may fail to produce anything. We will now discuss each of these ailments in more detail; an algorithm to rid a grammar of them is given in Section 2.9.5.
+在上下文无关语法中的规则可能是无用的，因为三个原因：它们可能包含未定义的非终结符，从起始符号开始可能无法到达它们，以及它们可能无法生存任何东西。接下来我们会详细讨论这些缺陷；2.9.5节给出了一个算法可以帮助语法拜托这些缺陷。
