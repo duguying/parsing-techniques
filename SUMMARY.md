@@ -36,6 +36,6 @@
    * [2.9 上下文无关语法的健全](ebook/2/9/README.md)
       * [2.9.1 未定义的非终结符](ebook/2/9/1.md)
       * [2.9.2 不可到达的非终结符](ebook/2/9/2.md)
-      * [2.9.3 Non-Productive Rules and Non-Terminals](ebook/2/9/3.md)
+      * [2.9.3 非生成性规则和非终结符](ebook/2/9/3.md)
       * [2.9.4 Loops](ebook/2/9/4.md)
       * [2.9.5 Cleaning up a Context-Free Grammar](ebook/2/9/5.md)
