@@ -38,4 +38,4 @@
       * [2.9.2 不可到达的非终结符](ebook/2/9/2.md)
       * [2.9.3 非生成性规则和非终结符](ebook/2/9/3.md)
       * [2.9.4 循环](ebook/2/9/4.md)
-      * [2.9.5 Cleaning up a Context-Free Grammar](ebook/2/9/5.md)
+      * [2.9.5 清理上下文无关语法](ebook/2/9/5.md)
