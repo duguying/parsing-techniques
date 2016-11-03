@@ -40,3 +40,7 @@
       * [2.9.4 循环](ebook/2/9/4.md)
       * [2.9.5 清理上下文无关语法](ebook/2/9/5.md)
    * [2.10 设定上下文无关和正则语言的属性](ebook/2/10/README.md)
+   * [2.11 The Semantic Connection](ebook/2/11/README.md)
+      * [2.11.1 Attribute Grammars](ebook/2/11/1.md)
+      * [2.11.2 Transduction Grammars](ebook/2/11/2.md)
+      * [2.11.3 Augmented Transition Networks](ebook/2/11/3.md)
