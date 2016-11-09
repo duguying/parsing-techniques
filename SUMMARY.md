@@ -43,4 +43,4 @@
    * [2.11 语义连接](ebook/2/11/README.md)
       * [2.11.1 属性语法](ebook/2/11/1.md)
       * [2.11.2 转导语法](ebook/2/11/2.md)
-      * [2.11.3 Augmented Transition Networks](ebook/2/11/3.md)
+      * [2.11.3 增广转换网络](ebook/2/11/3.md)
