@@ -1,0 +1,5 @@
+# 3 解析的简介
+
+To parse a string according to a grammar means to reconstruct the production tree (or trees) that indicate how the given string can be produced from the given grammar. It is significant in this respect that one of the first publications on parsing (Greibach’s 1963 doctoral thesis [6]), was titled “Inverses of Phrase Structure Generators”, where a phrase structure generator is to be understood as a system for producing phrases from a phrase structure (actually context-free) grammar.
+
+Although production of a sentence based on a Type 0 or Type 1 grammar gives rise to a production graph rather than a production tree, and consequently parsing yields a parse graph, we shall concentrate on parsing using a Type 2, context-free grammar, and the resulting parse trees. Occasionally we will touch upon parsing with Type 0 or Type 1 grammars, as for example in Section 3.2, just to show that it is a meaningful concept.
