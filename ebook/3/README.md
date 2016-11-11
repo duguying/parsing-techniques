@@ -1,5 +1,5 @@
-# 3 解析的简介
+# 3 解析简介
 
-To parse a string according to a grammar means to reconstruct the production tree (or trees) that indicate how the given string can be produced from the given grammar. It is significant in this respect that one of the first publications on parsing (Greibach’s 1963 doctoral thesis [6]), was titled “Inverses of Phrase Structure Generators”, where a phrase structure generator is to be understood as a system for producing phrases from a phrase structure (actually context-free) grammar.
+根据语法来分析字符串意味着重建生成树，以展示给定字符串是如何通过给定语法生成的。在这方面它有重要意义，第一个解析方面的出版物（Greibach的1963年博士论文[6]）,命名为“逆向短语结构生成器”（Inverses of Phrase Structure Generators），而短语结构生成器被理解为一个从短语结构（事实上是上下文无关）语法生成短语的系统 。
 
-Although production of a sentence based on a Type 0 or Type 1 grammar gives rise to a production graph rather than a production tree, and consequently parsing yields a parse graph, we shall concentrate on parsing using a Type 2, context-free grammar, and the resulting parse trees. Occasionally we will touch upon parsing with Type 0 or Type 1 grammars, as for example in Section 3.2, just to show that it is a meaningful concept.
+虽然基于0型或1型语法生成句子产生的是生成图而不是生成树，并因此解析得到了解析图，我们应该使用2型，上下文无关语法，以专注于解析以及最后的解析树。偶尔我们会触及基于0型或1型语法的解析，例如3.2节，只是为了展示它是一个有意义的概念。
