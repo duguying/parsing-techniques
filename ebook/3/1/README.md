@@ -2,8 +2,8 @@
 
 关于重建解析树有两个重要的问题：我们为什么需要它；我们如何实现它。
 
-恢复生成树的需求是不自然的。毕竟，语法是一组字符串的凝聚态描述，既语言，并且也许我们的输入字符串可能属于或者不属于这个语言；没有涉及内部结构或生成路劲。如果我们坚持这个正式观点， If we adhere to this formal view, the only meaningful question we can ask is if a given string can be recognized according to a grammar; any question as to how would be a sign of senseless, even morbid curiosity. In practice, however, grammars have semantics attached to them: specific semantics is attached to specific rules, and in order to determine the semantics of a string we need to find out which rules were involved in its production and how. In short, recognition is not enough, and we need to recover the production tree to get the full benefit of the syntactic approach.
+恢复生成树的需求是不自然的。毕竟，语法是一组字符串的凝聚态描述，既语言，并且也许我们的输入字符串可能属于或者不属于这个语言；没有涉及内部结构或生成路劲。如果我们坚持这个正式观点，我们可以问的唯一有意义的问题就是，一个给定的字符串是否可以被一个语法识别；任何关于如何做的问题都是无意义的标志，甚至只能是一种好奇心的表示。然而在实践中，附加了语义的语法：特定的语义附加到特定的规则，而且为了确定一个字符串的语义，我们需要找出在参与了其生成过程的规则以及是如何参与的。总之，识别是不够的，我们还需要恢复生成树以得到句法方式的全部优势。
 
-The recovered production tree is called the parse tree. The fact that it is next to impossible to attach semantics to specific rules in Type 0 and Type 1 grammars explains their relative unimportance in parsing, compared to Types 2 and 3.
+被恢复的生成树称为解析树。在0型和1型语法中，将语义附加到特定规则几乎是不可能的事实说明了它们在解析中的微不足道，相比于2型和3型语法。
 
-How we can reconstruct the production tree is the main subject of the rest of this book.
+如何重建生成树是本书余下部分的主题。
