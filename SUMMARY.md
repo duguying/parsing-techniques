@@ -51,3 +51,4 @@
    * [3.1 解析树](ebook/3/1/README.md)
       * [3.1.1 解析树的大小](ebook/3/1/1.md)
       * [3.1.2 各种歧义](ebook/3/1/2.md)
+      * [3.1.3 Linearization of the Parse Tree](ebook/3/1/3.md)
