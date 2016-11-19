@@ -53,3 +53,4 @@
       * [3.1.2 各种模糊性](ebook/3/1/2.md)
       * [3.1.3 解析树的线性化](ebook/3/1/3.md)
    * [3.2 解析一个句子的两种方法](ebook/3/2/README.md)
+      * [3.2.1 Top-Down Parsing](ebook/3/2/1.md)
