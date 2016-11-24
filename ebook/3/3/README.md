@@ -6,10 +6,10 @@
 
 ![图1](../../img/3.3_1.jpg)
 
-替换的机器被称为*非确定型自动机*或NDA；被称为“非确定型”是因为经常有几个可能的行动，并且特殊选择没有预先决定，而“自动”是因为会自动执行应激的操作。它管理三个组件： It manages three components: the input string (actually a copy of it), the partial parse tree and some internal administration. Every move of the NDA transfers some information from the input string through the administration to the partial parse tree. Each of the three components may be modified in the process:
+替换的机器被称为*非确定型自动机*或NDA；被称为“非确定型”是因为经常有几个可能的行动，并且特殊选择没有预先决定，而“自动”是因为会自动执行应激的操作。它管理三个组件：输入字符串（实际上是它的副本），部分解析树和一些内部的管理工作。NDA的每一个行动都转换来自输入字符串的一些信息到部分解析树中，通过管理工作。三个组件可能在过程中进行修改：
 
 ![图2](../../img/3.3_2.jpg)
 
-The great strength of an NDA, and the main source of its usefulness, is that it can easily be constructed so that it can only make “correct” moves, that is, moves that keep the system of partially processed input, internal administration and partial parse tree consistent. This has the consequence that we may move the NDA any way we choose: it may move in circles, it may even get stuck, but if it ever gives us an answer, in the form of a finished parse tree, that answer will be correct. It is also essential that the NDA can make all correct moves, so that it can produce all parsings if the control mechanism is clever enough to guide the NDA there. This property of the NDA is also easily arranged.
+NDA的强大力量，以及它实用性的主要来源，就是它可以被轻松的构建，以便它能只做“正确”的行为，也就是说，保持系统部分处理输入，内部控制和部分解析树一致的行为。这有可能导致我们按照选择的任何方式移动NDA的结局：它可能在圈中运动，甚至它可能困住，但是如果它能给我们一个答案，以一个完成的解析树的形式，那这个答案就将是正确的。NDA可以做所有正确的行为也是有必要的，以便它能生成所有解析，如果控制机制足够聪明能指导NDA。NDA的这个属性也很容易安排。
 
-The inherent correctness of the NDA allows great freedom to the control mechanism, the “control” for short. It may be naive or sophisticated, it may be cumbersome or it may be efficient, it may even be wrong, but it can never cause the NDA to produce an incorrect parsing; and that is a comforting thought. If it is wrong it may, however, cause the NDA to miss a correct parsing, to loop infinitely, or to get stuck in a place where it should not.
+NDA固有的正确性给控制机制带来了极大的自由，简称“控制”。它可能是幼稚的又或成熟的，它可能是麻烦的又或是有效的，它甚至可能是错的，但它绝不可能会使NDA生成一个不正确的解析；而这是一个令人欣慰的想法。然而，如果它是错误的，那可能会是NDA错失一个正确的鸡西，导致无限循环，或在不应该的地方被卡住。
