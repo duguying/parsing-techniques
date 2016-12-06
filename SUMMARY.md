@@ -59,3 +59,4 @@
    * [3.3 非确定型自动机](ebook/3/3/README.md)
       * [3.3.1 构建NDA](ebook/3/3/1.md)
       * [3.3.2 构建控制机制](ebook/3/3/2.md)
+   * [3.4 Recognition and Parsing for Type 0 to Type 4 Grammars](ebook/3/4/README.md)
