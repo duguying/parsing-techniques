@@ -1,7 +1,7 @@
-# 3.5 An Overview of Context-Free Parsing Methods
+# 3.5 上下文无关解析方法的概述
 
-Among the Chomsky grammar types the context-free (Type 2) grammars occupy the most prominent position. This has three reasons: 1. CF parsing results in trees, which allow semantics to be expressed and combined easily; 2. CF languages cover a large part of the languages one would like to process automatically; 3. efficient CF parsing is possible – though sometimes with great difficulty. The context-free grammars are followed immediately by the finite-state grammars in importance. This is because the world and especially equipment is finite; vending machines, remote controls, virus detectors, all exhibit finite-state  ehavior. The rest of the chapters in this book will therefore be mainly concerned with CF parsing, with the exception of Chapter 5 (finite-state grammars) and Chapter 15 (non-Chomsky systems). We shall now give an overview of the context-free parsing methods.
+在Chomsky语法类型中，上下文无关（2型）语法占据着最突出的位置。这有三个原因：1.CF解析的结果在生成树上，这让语义的表达和结合更容易；2.CF语言覆盖了很大一部分人们想要自动处理的语言；3.有效的CF解析是有可能的----虽然有时候存在很大的困难。在重要性上上下文无关语法后紧跟着有限状态语法。这是因为世界和设备是有限的；自动售货机、远程控制、病毒探测器，所有这些都展示了有限状态的本性。本书的其余章节，因此将主要关注CF解析，除了第5章（有限状态语法）之外，以及第15章（非Chomsky体系）。我们现在先看一下上下文无关解析方法的概述。
 
-The reader of literature about parsing is confronted with a large number of techniques with often unclear interrelationships. Yet all techniques can be placed in a single framework, according to some simple criteria; they are summarized in Figure 3.11.
+关于解析文学的读者面临着大量相互之间关系往往不明确的技术。然而现在所有的技术都可以被放在一个单一的框架中，根据一些简单的标准：见图Fig 3.11。
 
-We have already seen that a parsing technique is either top-down, reproducing the input string from the start symbol, or bottom-up, reducing the input to the start symbol. The next division is that between directional and non-directional parsing methods.
+我们已经看到，一个解析技术要么是自顶向下，从起始符号开始重新生成输入字符串，要么是自底向上，向着起始符号缩减输入字符串。下一个分歧点是在定向和非定向解析方法之间。
