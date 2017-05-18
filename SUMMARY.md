@@ -75,4 +75,4 @@
       * [3.5.7 广义线性方法](ebook/3/5/7.md)
       * [3.5.8 总结](ebook/3/5/8.md)
    * [3.6 解析技术的力量](ebook/3/6/README.md)
-   * [3.7 Representations of Parse Trees](ebook/3/7/README.md)
+   * [3.7 解析树的表现形式](ebook/3/7/README.md)

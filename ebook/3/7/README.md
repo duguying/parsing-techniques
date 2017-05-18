@@ -1,3 +1,3 @@
-# 3.7 Representations of Parse Trees
+# 3.7 解析树的表现形式
 
-The purpose of parsing is to obtain one or more parse trees, but many parsing techniques do not tell you in advance if there will be zero, one, several or even infinitely many parse trees, so it is a little difficult to prepare for the incoming answers. There are two things we want to avoid: being under-prepared and miss parse trees, and being over-prepared and pre-allocate an excessive amount of memory. Not much published research has gone into this problem, but the techniques encountered in the literature can be grouped into two models: the producer-consumer model and the data structure model.
+解析的目的是获取一个或多个解析树，但很多解析技术不会提前告诉你会有0个、一个、几个或者无限多个解析树将会生成，所以对于即将出现的结果会缺点准备。有两件事情我们要避免：无准备应对和没有解析树，以及准备过渡和分配过多的内存。目前没有太多的文章或书籍涉及到这个问题，但在论文中遇到的技术性问题可以分成两个模型：生产者-消费者模型和数据结构模型。
