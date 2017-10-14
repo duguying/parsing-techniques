@@ -1,4 +1,4 @@
-# 3.8 When are we done Parsing?
+# 3.8 什么时候才是完成了解析呢？
 
 Since non-directional parsers process the entire input at once and summarize it into a single data structure, from which parse trees can then be extracted, the question of when the parsing is done does not really arise. The first stage is done when the data structure is finished; extracting the parse trees is done when they are exhausted or the user is satisfied.
 
