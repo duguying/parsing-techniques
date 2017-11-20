@@ -1,6 +1,6 @@
 # 3.8 什么时候才是完成了解析呢？
 
-Since non-directional parsers process the entire input at once and summarize it into a single data structure, from which parse trees can then be extracted, the question of when the parsing is done does not really arise. The first stage is done when the data structure is finished; extracting the parse trees is done when they are exhausted or the user is satisfied.
+由于非决定性解析器是一次性处理整个输入字符串，并将其汇总到一个单一的数据结构中，然后可以从中提取出解析树，那么何时能完成解析的问题就不大会出现了。当数据结构完成后，第一阶段就完成了；Since non-directional parsers process the entire input at once and summarize it into a single data structure, from which parse trees can then be extracted, the question of when the parsing is done does not really arise. The first stage is done when the data structure is finished; extracting the parse trees is done when they are exhausted or the user is satisfied.
 
 In principle, a directional parser is finished when it is in an accepting state and the entire input has been consumed. But this is a double criterion, and sometimes one of these conditions implies the other; also other considerations often play a role. As a result, for directional parsers the question has a complex answer, depending on a number of factors:
 
