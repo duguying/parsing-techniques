@@ -20,16 +20,16 @@
 
 ![图1](../../img/3.8_1.png)
 
-有些答案在直觉上是合理的：如果解析器持续保持在不接受输入的状态下，它应该这样做；如果解析器不能保持在不接受输入的状态，那么输入中存在错误；并且如果解析器在输入结束时仍旧保持可接受状态，那么解析就成功了。但另一些情况要更复杂：如果解析器是在处于可接受状态，我们就会隔离一个前缀，Some answers are intuitively reasonable: if the parser can continue in a nonaccepting state, it should do so; if the parser cannot continue in a non-accepting state, there was an error in the input; and if the parser is in an accepting state at the end of the input and cannot continue, parsing was successful. But others are more complicated: if the parser is in an accepting state, we have isolated a prefix, even if the parser could continue and/or is at EOI. If that is what we want we can stop, but usually we want to continue if we can: with the grammar S--->a|ab and the input ab we could stop after the a and declare the a a prefix, but it is very likely we want to continue and get the whole ab parsed. This could be true even if we are at EOI: with the grammar S--->a|aB where B produces ε and the input a we need to continue and parse the B, if we want to obtain all parsings. And if the parser cannot, we have recognized a string in the language with what error messages usually call “trailing garbage”.
+有些答案在直觉上是合理的：如果解析器持续保持在不接受输入的状态下，它应该这样做；如果解析器不能保持在不接受输入的状态，那么输入中存在错误；并且如果解析器在输入结束时仍旧保持可接受状态，那么解析就成功了。但另一些情况要更复杂：如果解析器是在处于可接受状态，我们就会隔离一个前缀，即使解析器在结尾处可以继续“与/或”处理。如果这是我们想要的，那我们可以停止了，但通常情况下，只要可以继续我们就会想要继续：语法**S--->a|ab**以及输入**ab**，我们可以在**a**和声明**a**的一个前缀后结束，但很可能的是我们会想要继续下去，直到**ab**整个被解析结束。这可能是事实，即便我们已经处于结尾处：语法**S--->a|aB**，其中**B**生成**ε**，我们要继续输入**a**以及解析**B**，如果我们想要获取所有的解析。如果解析器做不到，我们在语言中识别了一个字符串，错误信息通常被称为“尾随垃圾”（trailing garbage）。
 
-Note that “premature EOI” (the input is a prefix of a string in the language) is the dual of “prefix isolated” (a prefix of the input is a string in the language). If we are looking for a prefix we usually want the longest possible prefix. This can be implemented by recording the most recent position P in which a prefix was recognized and continuing parsing until we get stuck, at the end of the input or at an error. P is then the end of the longest prefix.
+请注意，“过早处于结尾（premature EOI）”（在语言中一个字符串的输入是一个前缀），是“前缀隔离（prefix isolated）”（输入的前缀是语言中的一个字符串）的对偶。如果我们正在找一个前缀，那我们一般会想找到最长的可能的前缀。这可以通过标记最近的被识别为前缀的位置*P*，然后继续解析直到我们到达结尾或者出现错误被卡住。那么*P*就是最长前缀的末尾。
 
-Many directional parsers use look-ahead, which means that there must always be enough tokens for the look-ahead, even at the end of the input. This is implemented by introducing an end-of-input token, for example # or any other token that does not occur elsewhere in the grammar. For a parser that uses k tokens of look-ahead, k copies of # are appended to the input string; the look-ahead mechanism of the parser is modified accordingly; see for example Section 9.6. The only accepting state is then the state in which the first # is about to be accepted, and it always indicates that the parsing is finished.
+许多定向解析器使用前瞻方式，这意味着即便在输入的末尾，也必须有足够的令牌用于前瞻。这可以通过引入一个*输入结尾*令牌来实现，例如**#**或其他任何语法中没有的令牌。对于一个使用*k*个令牌做前瞻的解析器，*k*个**#**的副本将会被追加到输入字符串中；解析器的前瞻机制将会也会进行相应修改；例子参见9.6节。唯一的接受状态就是第一个**#**即将被接受的状态，而这通常也表示解析完成了。
 
-This simplifies the situation and the above table considerably since now the parser cannot be in an accepting state when not at the end of the input. This eliminates the two prefix answers from the table above. We can then superimpose the top half of the table on the bottom half, after which the leftmost column becomes redundant. This results in the following table:
+这大大简化了目前的情形和上面的表格，因为现在解析器在输入没有结束时不能处于可接受状态。这去掉了上表中前缀的两个答案。然后我们将上表的上下部分进行叠加，然后最左边的列就变得多余了。就变成了下面这张表：
 
 ![图2](../../img/3.8_2.png)
 
-where we leave the check to distinguish between “error in input” and “premature EOI” to the error reporting mechanism.
+然后我们将区分“错误输入”和“过早结束”的工作交给错误报告机制来完成。
 
-Since there is no clear-cut general criterion for termination in directional parsers, each parser comes with its own stopping criterion, a somewhat undesirable state of affairs. In this book we will use end-of-input markers whenever it is helpful for termination, and, of course, for parsers that use look-ahead.
+由于在定向解析器中没有明确的终止标准，所以每个解析器都有自己的停止标准，这是一个有点不理想的状态。这本书中，我们将使用最终输入标记，只要它有助于终止，并且当然，对于解析器使用前瞻机制。
