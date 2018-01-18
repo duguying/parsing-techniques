@@ -81,6 +81,7 @@
       * [3.7.3 解析林](ebook/3/7/3.md)
       * [3.7.4 解析林语法](ebook/3/7/4.md)
    * [3.8 什么时候才是完成了解析呢？](ebook/3/8/README.md)
+   * [3.9 Transitive Closure](ebook/3/9/README.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
