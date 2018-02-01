@@ -25,13 +25,13 @@
 
 ![图6.4_6](../../img/6.4_6.png)
 
-，每时每刻句型的最左边都是非终结符，然后再三地用它的一个右侧替代。每一个非终结符都有一个标号，写作i<sub>1<sub>,i<sub>2<sub>,...,i<sub>m<sub>,于是在推导中我们得到了这么一串数：i<sub>1<sub>,i<sub>2<sub>,...,i<sub>m<sub>,i<sub>1<sub>.现在，如果我们没有任何A<sub>i</sub>&rarr;A<sub>j</sub>&alpha;(j&le;i),这是就不可能的，因为i<sub>1<sub>&lt;i<sub>2<sub>&lt;&dots;&lt;i<sub>m<sub>&lt;i<sub>1<sub>是不可能的。
-现在就要消除这样的规则。我们从A<sub>1<sub>开始。对A<sub>1<sub>，要消除了只是直接递归的规则，我们已经看到了应该怎么做。接着轮到A<sub>2<sub>。每一个有着A<sub>2<sub>&rarr;A<sub>1<sub>&alpha;形式的产生式都要被替代成
+，每时每刻句型的最左边都是非终结符，然后再三地用它的一个右侧替代。每一个非终结符都有一个标号，写作i<sub>1</sub>,i<sub>2</sub>,...,i<sub>m</sub>,于是在推导中我们得到了这么一串数：i<sub>1</sub>,i<sub>2</sub>,...,i<sub>m</sub>,i<sub>1</sub>.现在，如果我们没有任何A<sub>i</sub>&rarr;A<sub>j</sub>&alpha;(j&le;i),这就是不可能的，因为i<sub>1</sub>&lt;i<sub>2</sub>&lt;...&lt;i<sub>m</sub>&lt;i<sub>1</sub>是不可能的。
+现在就要消除这样的规则。我们从A<sub>1</sub>开始。对A<sub>1</sub>，要消除了只是直接递归的规则，我们已经看到了应该怎么做。接着轮到A<sub>2</sub>。每一个有着A<sub>2</sub>&rarr;A<sub>1</sub>&alpha;形式的产生式都要被替代成
 
 ![图6.4_7](../../img/6.4_7.png)
 
-这里A<sub>1<sub>的规则为
+这里A<sub>1</sub>的规则为
 
 ![图6.4_8](../../img/6.4_8.png)
 
-这不可能产生A<sub>2<sub>&rarr;A<sub>1<sub>&gamma;形式的新规则，因为我们已经消除了A<sub>1<sub>的左递归规则，而且&alpha;<sub>i</sub>都不为&epsilon;。接着，我们消除A<sub>2<sub>的直接递归规则。这样对A<sub>2<sub>的工作就结束了。类似的，我们对A<sub>3<sub>到A<sub>n<sub>进行处理，按照总是先替代A<sub>i<sub>&rarr;A<sub>1<sub>&gamma;,再A<sub>i<sub>&rarr;A<sub>2<sub>&delta;等等的顺序。我们必须按照这样的顺序，因为，比如替换一个A<sub>i<sub>&rarr;A<sub>2<sub>&delta;的规则会引入A<sub>i<sub>&rarr;A<sub>3<sub>&gamma;这样的规则，而不会是A<sub>i<sub>&rarr;A<sub>1<sub>&alpha;
+这不可能产生A<sub>2</sub>&rarr;A<sub>1</sub>&gamma;形式的新规则，因为我们已经消除了A<sub>1</sub>的左递归规则，而且&alpha;<sub>i</sub>都不为&epsilon;。接着，我们消除A<sub>2</sub>的直接递归规则。这样对A<sub>2</sub>的工作就结束了。类似的，我们对A<sub>3</sub>到A<sub>n</sub>进行处理，按照总是先替代A<sub>i</sub>&rarr;A<sub>1</sub>&gamma;,再A<sub>i</sub>&rarr;A<sub>2</sub>&delta;等等的顺序。我们必须按照这样的顺序，因为，替换一个A<sub>i</sub>&rarr;A<sub>2</sub>&delta;的规则可能会引入A<sub>i</sub>&rarr;A<sub>3</sub>&gamma;这样的规则，而不会是A<sub>i</sub>&rarr;A<sub>1</sub>&alpha;
