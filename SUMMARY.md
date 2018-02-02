@@ -88,3 +88,4 @@
    * [6.3 广度优先自顶向下解析（Breadth-First Top-Down Parsing)](ebook/6/3/README.md)
       * [6.3.1 一个例子](ebook/6/3/1.md)
       * [6.3.2 一个反例](ebook/6/3/2.md)
+   * [6.4 消除左递归](ebook/6/4/README.md)
