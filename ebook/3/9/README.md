@@ -1,45 +1,45 @@
-# 3.9 Transitive Closure
+# 3.9 传递闭包
 
-Many algorithms in parsing (and in other branches of computer science) have the property that they start with some initial information and then continue to draw conclusions from it based on some inference rules until no more conclusions can be drawn. We have seen two examples already, with their inference rules, in Sections 2.9.5.1 and 2.9.5.2. These inference rules were quite different, and in general inference rules can be arbitrarily complex. To get a clear look at the algorithm for drawing conclusions, the closure algorithm, we shall now consider one of the simplest possible inference rules: transitivity. Such rules have the form
+解析中的许多算法（以及在计算机科学中的许多其他分支）都具有一些从初始信息开始的属性，然后根据一些理论规则推到得出结论，一直到不能得出更多的结论为止。在2.9.5.1 和2.9.5.2 节中的推理规则中, 我们已经看到了两个例子。这些推理是完全不同的，并且一般的推理规则可以是任意复杂的。为了得到一个清晰的计算结论的算法，闭包算法，我们现在将考虑一个最简单的可能的推理规则: 传递性。这种规则的形式如下：
 
-if A⊗B and B⊗C then A⊗C
+如果*A$$\bigotimes$$B* 并且*B$$\bigotimes$$C* 那么*A$$\bigotimes$$C*
 
-where ⊗ is any operator that obeys the rule. The most obvious one is =, but <, ≤ and many others also do. But note that, for example,  = (not equal) does not.
+其中$$\bigotimes$$是任意符合规则的操作符。最明显的是=，但是<和$$\leq$$以及其他许多也是可以的。但是$$\neq$$（不等于）却不是的。
 
-As an example we shall consider the computation of the “left-corner set” of a non-terminal. A non-terminal B is in the left-corner set of a non-terminal A if there is a derivation A→* B· · · ; it is sometimes useful to know this, because among other things it means that A can begin with anything B can begin with.
+作为一个例子，我们将考虑一个非终结符的“左角集”的计算。一个非终结符*B*在一个非终结符*A*的左角集中，如果有一个派生*A$$\overset{ * }{\rightarrow}$$B···*，知道这点有时是有用的，因为在其他方面来说，任何*B*可以开始的字符*A*也都能开始。
 
-Given the grammar
+有下面这样一个语法
 
 ![图1](../../img/3.9_1.png)
 
-how can we find out that C is in the left-corner set of S? The rules S--->ST and S--->Aa in the grammar tell us immediately that S and A are in the left-corner set of S. We write this as S∠S and A∠S, where ∠ symbolizes the left corner. It also tells us A∠T, B∠A, and C∠B. This is our initial information (Figure 3.19(a)).
+我们如何才能找出**C**在**S**的左角集中？语法中的规则**S$$\rightarrow$$ST**和**S$$\rightarrow$$Aa**立即就让我们知道**S**和**A**在**S**的左角集中。我们把这写作**S∠S**和**A∠S**，其中∠代表左角。这同样告诉我们**A∠T**,**B∠A**，还有**C∠B**。这是我们的初始信息（图3.19（a））。
 
 ![图2 Fig.3.19](../../img/3.9_2-Fig.3.19.png)
 
-Now it is easy to see that if A is in the left-corner set of B and B is in the leftcorner set of C, then A is also in the left-corner of C. In a formula:
+现在很容易看出，如果**A**在**B**的左角集中，**B**在**C**的左角集中，那么**A**也在**C**的左角集中。公式如下：
 
-A∠B ∧ B∠C ⇒ A∠C
+A∠B ∧ B∠C $$\Rightarrow$$ A∠C
 
-This is our inference rule, and we will use it for drawing new conclusions, or “inferences”, by pairwise combining known facts to produce more known facts. The transitive closure is then obtained by applying the inference rules until no more new facts are produced. The facts are also called “relations” in the transitive-closure context, although formally ∠ is the (binary) relation, and A∠B and B∠C are “instances” of that relation.
+这是我们的*推理规则*，而且我们将使用它来得出新结论或“推论”，通过两两组合已知的事实来产生更多的已知因子。然后通过应用推理规则直到不再产生新的因子来获得传递闭包。在传递闭包的上下文中，因子也被称为“关系”，虽然一般∠是（二进制）关系，并且A∠B和B∠C 是关系的 "实例"。
 
-Going through the list in Figure 3.19(a) we first combine S∠S and S∠S. This yields S∠S, which is rather disappointing since we knew that already; it is in Figure 3.19(b), marked with a ✔ to show that it is not new. The combination (S∠S, A∠S) yields A∠S, but we already knew that too. No other facts combine with S∠S, so we continue with A∠S, which yields A∠S and B∠S; the first is old, the second our first new discovery. Then (A∠T, B∠A) yields B∠T, etc., and the rest of the results of the first round can be seen in Figure 3.19(b).
+通过图 3.19 (a) 中的列表，我们首先将**S∠S**和**S∠S**结合起来。这将产生**S∠S**,这是相当令人失望的因为我们已经知道了；它在图 3.19 (b) 中, 标有一个**√**, 以表明它不是新的。（**S∠S, A∠S**的）结合产生**A∠S**，但是我们也已经知道了。没有其他的因子与**S∠S**结合，所以我们继续看**A∠S**，而这得到了**A∠S**和**B∠S**；第一个我们已经知道了，但是第二个是第一次被我们知道。接着（**A∠T**,**B∠A**）就得到了**B∠T**，等等，做完剩下部分的第一轮结果见图3.19(b)。
 
-The second round combines the three new facts with the old and new ones. The first new discovery is C∠S from A∠S and C∠A (c); C∠T follows.
+第二轮结合了三个有新有旧的因子。第一个是发现由**A∠S**和**C∠A (c)**得到了**C∠S**，第二个发现是**C∠T**。
 
-The third round combines the two new facts in (c) with those in (a), (b), and (c), but finds no new facts; so the algorithm terminates with 10 facts.
+第三轮将（c）中的两个新因子与（a），（b），（c）中的结合起来，但没有发现新的因子；所以这个算法最终发现了10个因子。
 
-Note that we have already implemented an optimization in this naive algorithm: the basic algorithm would start the second and subsequent rounds by pairing up all known facts with all known facts, rather than just the new ones.
+请注意，我们已经在这个初级算法中实现了一次优化：基础算法将启动第二轮甚至更多轮次，通过将已知的所有因子之间配对，而不仅仅只是在新发现的因子之间。
 
-It is often useful to represent the facts or relations in a graph, in which they are arcs. The initial situation is shown in Figure 3.20(a), the final one in (b). The numbers next to the arrows indicate the rounds in which they were added.
+在一个图中用弧线表示因子或关系通常是有帮助的。最初的情况见图3.20 (a)，最终的结果见（b）。箭头旁边的数字表明得到该因子经过了几轮计算。
 
 ![图3 Fig.3.20](../../img/3.9_3-Fig.3.20.png)
 
-The efficiency of the closure algorithm of course depends greatly on the inference rule it uses, but the case for the transitive rule has been studied extensively. There are three main ways to do transitive closure: naive, traditional, and advanced; we will discuss each of them briefly. The naive algorithm, sketched above, is usually quite efficient in normal cases but may require a large number of rounds to converge in exceptional cases on very large graphs. Also it recomputes old results several times, as we see in Figure 3.19: of the 15 results 10 were old. But given the size of “normal” grammars, the naive algorithm is satisfactory in almost all situations in parsing.
+闭包算法的效率很大程度上依赖于它所所使用的推理算法，而传递规则的情况被广泛的进行了研究。传递闭包主要有三种方法来进行：初级版、普通版和高级版；我们将简要的对每一种进行介绍。上面描述过的初级算法，在通常情况下往往是相当有效率的，但会画出一张很大的图，而且特殊情况下可能会需要计算很多轮。同样它还会重复计算很多次，我们可以在图3.19中看出；15个结果中有10个是已经得到了的。但考虑到“正常”语法的大小，初级算法几乎可以满足所有情况下的解析。
 
-The traditional method to do transitive closure is to use Warshall’s algorithm [409]. It has the advantage that it is very simple to implement and that the time it requires depends only on the number of nodes N in the graph and not on the number of arcs, but it has the disadvantage that it always requires O(N3) time. It always loses in any comparison to any other closure algorithm.
+普通的进行传递闭包的方式是使用Warshall的算法[409]。其优势是非常简单实现，而且它需要的时间仅取决于图中*N*节点的数量而不是弧线的数量，但它的缺点是总是需要*O（N<sub>3</sub>）*的时间。这回让它在和其他任何闭包算法的比较中总是输掉。
 
-The advanced algorithms avoid the inefficiencies of the naive algorithm: 1. cycles in the graph are contracted as “strongly connected components”; 2. the arcs are combined in an order which avoids duplicate conclusions and allows sets of arcs to be copied rather than recomputed; 3. efficient data representations are used. For example, an advanced algorithm would first compute all outgoing arcs at A and then copy them to T rather than recomputing them for T. The first advanced transitive closure algorithm was described by Tarjan [334]. They are covered extensively in many other publications; see Nuutila [412] and the Internet. They require time proportional to the number of conclusions they draw.
+高级算法避免了导致初级算法效率底下的劣势：1.图中的圆圈被收缩为“强联通分量”；2.弧线以一种顺序组合起来，并允许弧线进行复制而不是重复计算；3.使用更有效的数据表示。例如，一个高级算法首先会计算从**A**的所有输出弧，然后将之拷贝至**T**而不是重新计算一次。Tarjan [334] 描述了第一个高级可传递闭包算法。并在其他很多刊物上广泛转载；见Nuutila[412]和互联网。它需要的时间与其最终得出的结果数量成正比。
 
-Advanced transitive closure algorithms are very useful in large applications (databases, etc.) but their place in parsing is doubtful. Some authors recommend their use in LALR parser generators but the grammars used would have to be very large for the algorithmic complexity to pay off.
+高级可传递闭包算法在大型应用程序 (数据库等) 中非常有用，但它在解析中的位置确实令人怀疑的。一些作者建议在LALR解析器生成器中使用它们，但应该在非常庞大的语法上使用，以保证算法的复杂性有一个很好的回报。
 
-The advantage of emphasizing the closure nature of algorithms is that one can concentrate on the inference rules and take the underlying closure algorithm for granted; this can be a great help in designing algorithms. Most algorithms in parsing are, however, simple enough as to not require decomposition into inference rules and closure for their explanation. We will therefore use inference rules only where they are helpful in understanding (Section 9.7.1.3) and where they are part of the culture (Section 7.3, chart parsing). For the rest we will present the algorithms in narrative form, and point out in passing that they are transitive-closure algorithms.
+强调算法的闭包性质的优点可以让人集中于推理规则，并将底层的闭包算法当做理所当然；这对于算法设计很有帮助。然而大多数的解析算法都很简单，以至于不需要分解成推理规则和闭包解释。因此我们将仅在有助于理解的地方使用推理规则（9.7.1.3节），以及当其原本就是语法的一部分的情况下使用（7.3节，图表解析）。对于其余的我们将简单的讲述算法，然后指出他们是传递闭包算法得出的。
