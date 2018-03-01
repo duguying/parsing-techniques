@@ -91,4 +91,4 @@
       * [6.3.2 一个反例](ebook/6/3/2.md)
    * [6.4 消除左递归](ebook/6/4/README.md)
    * [6.5 深度优先（回溯）解析器](ebook/6/5/README.md)
-   * [6.5 递归下降](ebook/6/6/README.md)
+   * [6.6 递归下降](ebook/6/6/README.md)
