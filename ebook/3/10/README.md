@@ -1,8 +1,8 @@
-### 3.10 The Relation between Parsing and Boolean Matrix Multiplication
+# 3.10 解析与布尔矩阵乘法的关系
 
-There is a remarkable and somewhat mysterious relationship between parsing and Boolean matrix multiplication, in that it is possible to turn one into the other and vice versa, with a lot of ifs and buts. This has interesting implications.
+在解析和布尔矩阵乘法之间有一个显著但又有点神秘的关系，因为很可能把一个转换为另一个，带有很多可能和但是。这有很有趣的含义。
 
-A Boolean matrix is a matrix in which all entries are either 0 or 1. If the indexes of amatrix T represent towns, the element Ti, j could, for example, indicate the existence of a direct railroad connection from town i to town j. Such a matrix can be multiplied by another Boolean matrix Uj,k, which could, for example, indicate the existence of a direct bus connection from town j to town k. The result Vi,k (the product of T and U) is a Boolean matrix which indicates if there is a connection from town i to town k by first using a train and then a bus. This immediately shows how Vi,k must be computed: it should have a 1 if there is a j for which both Ti, j and Uj,k hold a 1, and a 0 otherwise. In a formula:
+一个布尔矩阵是一个其中所有元素只能为0或者1的矩阵。比如如果一个矩阵*T*的索引代表镇，那么元素*T<sub>i,j</sub>*可能就表示城镇*i*到城镇*j*的直达铁路的距离。A Boolean matrix is a matrix in which all entries are either 0 or 1. If the indexes of amatrix T represent towns, the element Ti, j could, for example, indicate the existence of a direct railroad connection from town i to town j. Such a matrix can be multiplied by another Boolean matrix Uj,k, which could, for example, indicate the existence of a direct bus connection from town j to town k. The result Vi,k (the product of T and U) is a Boolean matrix which indicates if there is a connection from town i to town k by first using a train and then a bus. This immediately shows how Vi,k must be computed: it should have a 1 if there is a j for which both Ti, j and Uj,k hold a 1, and a 0 otherwise. In a formula:
 
 Vi,k = (Ti,1 ∧U1,k)∨(Ti,2 ∧U2,k)∨· · ·∨(Ti,n ∧Un,k)
 
