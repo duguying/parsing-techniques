@@ -92,3 +92,5 @@
    * [6.4 消除左递归](ebook/6/4/README.md)
    * [6.5 深度优先（回溯）解析器](ebook/6/5/README.md)
    * [6.6 递归下降](ebook/6/6/README.md)
+* [7 通常自下而上的解析](ebook/7/README.md)
+   * [7.1 通过搜索解析](ebook/7/1/1.md)
