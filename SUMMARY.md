@@ -83,6 +83,7 @@
    * [3.8 什么时候才是完成了解析呢？](ebook/3/8/README.md)
    * [3.9 传递闭包](ebook/3/9/README.md)
    * [3.10 解析与布尔矩阵乘法的关系](ebook/3/10/README.md)
+   * [3.11 总结](ebook/3/11/README.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
