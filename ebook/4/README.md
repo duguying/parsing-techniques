@@ -1,4 +1,4 @@
-# 4 General Non-Directional Parsing
+# 4 一般非定向分析
 
 In this chapter we will present two general parsing methods, both non-directional: Unger’s method and the CYK method. These methods are called non-directional because they access the input in a seemingly arbitrary order. They require the entire input to be in memory before parsing can start.
 
