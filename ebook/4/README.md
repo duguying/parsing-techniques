@@ -1,13 +1,13 @@
 # 4 一般非定向分析
 
-In this chapter we will present two general parsing methods, both non-directional: Unger’s method and the CYK method. These methods are called non-directional because they access the input in a seemingly arbitrary order. They require the entire input to be in memory before parsing can start.
+在这章中我们将会介绍两种解析方法，都是无向的：Unger法和CYK法。这些方法被称为无向性，因为它们以看似任意的方向接受输入。它们要求在解析开始之前，所有的输入都存储在内存中。
 
-Unger’s method is top-down; if the input belongs to the language at hand, it must be derivable from the start symbol of the grammar, say S. Therefore, it must be derivable from a right-hand side of the start symbol, say A1A2 · · ·Am. This, in turn, means that A1 must derive a first part of the input, A2 a second part, etc. If the input sentence is t1t2 · · ·tn, this demand can be depicted as follows:
+Unger方法是自顶向下的；如果输入属于这个语言，则必须从语法的起始符号开始衍生，比如*S*。因此，它必须从起始符号的右侧开始衍生，比如*A<sub>1</sub>A<sub>2</sub>...A<sub>m</sub>*。这反过来又意味着*A<sub>1</sub>*必须可以推倒出输入的第一部分，*A<sub>2</sub>*必须可以推倒出第二部分，等等。如果输入的句子是*t<sub>1</sub>t<sub>2</sub>...t<sub>n</sub>*，这个需求可以描述如下：
 
 ![图1](../../img/4_1.png)
 
-Unger’s method tries to find a partition of the input that fits this demand. This is a recursive problem: if a non-terminal Ai is to derive a certain part of the input, there must be a partition of this part that fits a right-hand side of Ai. Ultimately, such a right-hand side must consist of terminal symbols only, and these can easily be matched with the current part of the input.
+Unger方法试图找到适合这个需求的输入的分区。这是一个递归问题：如果一个非终结符*A<sub>i</sub>*要推导出输入的某个部分，则这部分的一个分区必须适应*A<sub>i</sub>*的右侧。最终，这样的右侧必须由仅有终结符号组成，并且这些可以很容易与当前的输入部分相匹配。
 
-The CYK method approaches the problem the other way around: it tries to find occurrences of right-hand sides in the input; whenever it finds one, it makes a note that the corresponding left-hand side derives this part of the input. Replacing the occurrence of the right-hand side with the corresponding left-hand side results in some sentential forms that derive the input. These sentential forms are again the subject of a search for right-hand sides, etc. Ultimately, we may find a sentential form that both derives the input sentence and is a right-hand side of the start symbol.
+CYK方法用另一种方法来解决这个问题：它试图在输入的右侧中找到出现的部分；每当找到一个，它就在推导出这一部分的左侧的位置标记一下。用相对应的左侧来替换右侧出现的部分，结果会产生输入的一些句子形式。这些句子形式再次成为查询右侧的对象。最终，我们可能会找到一个句子形式，可以同时派生输入句子和属于起始符号的右侧。
 
-In the next two sections, these methods are investigated in detail.
+在接下来的两节中，将会对这些方法进行详细介绍。
