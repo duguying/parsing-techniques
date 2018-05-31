@@ -8,5 +8,13 @@
 	"pdf": {
 		"paperSize": "b5"
 	},
-	"plugins": ["latex-codecogs"]
+	"plugins": [
+		"latex-codecogs",
+		"github@^2.0.0"
+	],
+	"pluginsConfig": {
+		"github":{
+			"url": "https://github.com/duguying/parsing-techniques"
+		}
+	}
 }
