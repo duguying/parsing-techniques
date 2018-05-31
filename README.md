@@ -12,6 +12,9 @@
 - Agnes Huang
 - Rex Lee
 
+### Github地址
+[https://github.com/duguying/parsing-techniques](https://github.com/duguying/parsing-techniques)
+
 ### 翻译进度
 **18%** [125/677]
 
