@@ -12,7 +12,7 @@
 - Agnes Huang
 - Rex Lee
 
-### Github地址
+### Github仓库
 [https://github.com/duguying/parsing-techniques](https://github.com/duguying/parsing-techniques)
 
 ### 翻译进度
