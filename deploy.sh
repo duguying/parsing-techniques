@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 pwd
 gitbook build parsing-techniques parsing-techniques-static
