@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "7"
 before_install:
+  - npm install gitbook-cli -g
   - npm install gitbook -g
 script:
   - ./deploy.sh
