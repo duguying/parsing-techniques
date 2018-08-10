@@ -1,5 +1,6 @@
 #!/bin/sh
 
+gitbook install
 cd ..
 pwd
 gitbook build parsing-techniques parsing-techniques-static
