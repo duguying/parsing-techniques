@@ -10,11 +10,19 @@
 	},
 	"plugins": [
 		"latex-codecogs",
-		"github@^2.0.0"
+		"github@^2.0.0",
+		"adsense"
 	],
 	"pluginsConfig": {
 		"github":{
 			"url": "https://github.com/duguying/parsing-techniques"
+		},
+		"adsense":{
+			"client": "ca-pub-9834162918051569",
+			"slot": "6509564652",
+			"format": "auto",
+			"element": ".page-inner section",
+			"position": "top"
 		}
 	}
 }
