@@ -11,7 +11,8 @@
 	"plugins": [
 		"latex-codecogs",
 		"github@^2.0.0",
-		"adsense"
+		"adsense",
+		"ta"
 	],
 	"pluginsConfig": {
 		"github":{
@@ -23,6 +24,9 @@
 			"format": "auto",
 			"element": ".page-inner section",
 			"position": "top"
+		},
+		"ta":{
+			"sid": "66176470"
 		}
 	}
 }
