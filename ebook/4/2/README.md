@@ -1,7 +1,7 @@
-# 4.2 The CYK Parsing Method
+# 4.2 CYK解析法
 
-The parsing method described in this section is attributed to J. Cocke, D.H. Younger, and T. Kasami, who independently discovered variations of the method; it is now known as the Cocke-Younger-Kasami method, or the CYK method. The most accessible original description is that of Younger [10]. An earlier description is by Sakai [5].
+本节中讲述的解析方法来自于*J. Cocke*、*D.H. Younger*以及*T. Kasami*，他们发现了该方法的变体；它被称为*Cocke-Younger-Kasami*法，或者*CYK*法。最容易理解的初稿是Younger [10]。更早一版是Sakai [5]。
 
-As with Unger’s parsing method, the input to the CYK algorithm consists of a CF grammar and an input sentence. The first phase of the algorithm constructs a table telling us which non-terminal(s) derive which substrings of the sentence. This is the recognition phase; it ultimately also tells us whether the input sentence can be derived from the grammar. The second phase uses this recognition table and the grammar to construct all possible derivations of the sentence.
+与Unger解析法一样，CYK法的输入包含一个CF语法和一个输入语句。算法的第一阶段构造了一个表，为我们将非终结符和派生出的句子的子句对应起来。这是识别阶段；它最终也告诉我们输入句子是否可以从语法中推导出来。第二阶段用这个对照表以及语法来生成所有可能的的句子。
 
-We will first concentrate on the recognition phase, which is the distinctive feature of the algorithm.
+我们先关注识别阶段，这是这个算法很特别的地方。

@@ -90,6 +90,7 @@
       * [4.1.1 不含ε规则和循环的Unger解析方法](ebook/4/1/1.md)
       * [4.1.2 含有ε规则的Unger方法](ebook/4/1/2.md)
       * [4.1.3 从Unger方法中获得解析林语法](ebook/4/1/3.md)
+   * [4.2 CYK解析法](ebook/4/2/README.md)
 * [5 正则语法与有限状态](ebook/5/README.md)
    * [5.1 正则语法的应用](ebook/5/1/README.md)
       * [5.1.1 CF解析中的正则语言](ebook/5/1/1.md)
