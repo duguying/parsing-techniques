@@ -1,0 +1,12 @@
+[color]
+ status = auto
+ diff = auto
+ branch = auto
+ interactive = auto
+ ui = true
+[user]
+ name = agnes1991
+ email = rui_huang@outlook.com
+[core]
+ editor=vim
+ autocrlf = input
