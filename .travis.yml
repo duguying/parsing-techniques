@@ -3,5 +3,13 @@ node_js:
   - "7"
 before_install:
   - npm install gitbook-cli -g
-script:
-  - ./deploy.sh
+jobs:
+  include:
+    - stage: compile
+      script: ./ci.sh complie
+    - stage: deploy
+      script: ./ci.sh deploy
+stages:
+  - compile
+  - name: deploy
+    if: type NOT IN (pull_request)
