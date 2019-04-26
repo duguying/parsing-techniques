@@ -24,9 +24,10 @@ function deploy() {
 
 if [ "$1" == "" ]; then
     help
-elif [ "$1" == "complie" ];then
+elif [ "$1" == "compile" ];then
     compile
 elif [ "$1" == "deploy" ];then
+    compile
     deploy
 else
     help

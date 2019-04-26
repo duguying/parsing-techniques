@@ -6,7 +6,7 @@ before_install:
 jobs:
   include:
     - stage: compile
-      script: ./ci.sh complie
+      script: ./ci.sh compile
     - stage: deploy
       script: ./ci.sh deploy
 stages:
