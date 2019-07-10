@@ -12,7 +12,8 @@
 		"latex-codecogs",
 		"github@^2.0.0",
 		"adsense",
-		"ta"
+		"ta",
+		"chapter-fold"
 	],
 	"pluginsConfig": {
 		"github":{
@@ -23,7 +24,8 @@
 			"slot": "6509564652",
 			"format": "auto",
 			"element": ".page-inner section",
-			"position": "top"
+			"position": "top",
+			"chapter-fold":{}
 		},
 		"ta":{
 			"sid": "66176470"
