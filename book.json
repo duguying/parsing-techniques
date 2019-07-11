@@ -13,7 +13,8 @@
 		"github@^2.0.0",
 		"adsense",
 		"ta",
-		"chapter-fold"
+		"chapter-fold",
+		"page-toc-button"
 	],
 	"pluginsConfig": {
 		"github":{
