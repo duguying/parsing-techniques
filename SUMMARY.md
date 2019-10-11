@@ -93,7 +93,7 @@
    * [4.2 CYK解析法](ebook/4/2/README.md)
       * [4.2.1 普通CF语法的CYK识别](ebook/4/2/1.md)
       * [4.2.2 Chomsky基本形式语法的CYK识别](ebook/4/2/2.md)
-      * [4.2.3 Transforming a CF Grammar into Chomsky Normal Form](ebook/4/2/3.md)
+      * [4.2.3 将CF语法转换为Chomsky普通形式](ebook/4/2/3.md)
 * [5 正则语法与有限状态](ebook/5/README.md)
    * [5.1 正则语法的应用](ebook/5/1/README.md)
       * [5.1.1 CF解析中的正则语言](ebook/5/1/1.md)
