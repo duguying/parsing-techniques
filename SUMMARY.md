@@ -97,7 +97,7 @@
       * [4.2.4 重访问示例](ebook/4/2/4.md)
       * [4.2.5 Chomsky普通形式的CYK解析](ebook/4/2/5.md)
       * [4.2.6 消除CNF转换的影响](ebook/4/2/6.md)
-      * [4.2.7 A Short Retrospective of CYK](ebook/4/2/7.md)
+      * [4.2.7 CYK的简短回顾](ebook/4/2/7.md)
 * [5 正则语法与有限状态](ebook/5/README.md)
    * [5.1 正则语法的应用](ebook/5/1/README.md)
       * [5.1.1 CF解析中的正则语言](ebook/5/1/1.md)
