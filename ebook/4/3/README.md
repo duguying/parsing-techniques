@@ -1,8 +1,8 @@
-# 4.3 Tabular Parsing
+# 4.3 表解析
 
-We have drawn the CYK recognition tables as two-dimensional triangular matrices, but the complexity of the entries — sets of non-terminals — already shows that this representation is not in its most elementary form. Simplicity and insight can be gained by realizing that a CYK recognition table is a superposition of a number of tables, one for each non-terminal in the grammar; the entries in these tables are just bits, saying “Present” or “Not Present”. Since the grammar for numbers from Figure 4.6 has 8 non-terminals, the recognition table from Figure 4.17 is a superposition of 8 matrices. They are shown in Figure 4.20. The dot in the top left corner of the table for Number means that a Number of length 7 has been recognized in position 1; the one almost at the bottom right corner means that a Number of length 1 has been recognized in position 7; etc.
+前面我们已经将CYK识别表绘制成了一个二维三角矩阵，但输入内容（非终结符集合）的复杂性已经表明，这并不是最原始的形式。通过发现CYK识别表是多个表（语法中每个非终结符都是一个表）的叠加可以更简洁有深度；这些输入内容在这些表里面只是*位（bits）*，含义是“Present”或者“NotPresent”。由于图Fig4.6中的数字语法有8个非终结符，因此图Fig4.17的识别表就是8个矩阵的叠加。见图Fig4.20。**Number**表左上角的*点*表示一个长度为7的**Number**已经识别到了位置1；在差不多最右下角的一个*点*表示一个长度为1的**Number**已经被识别到了位置7；以此类推。
 
-Imagine these 8 tables standing upright in the order Number · · · Empty, perhaps cut out of transparent plastic, glued together into a single block. Now topple the block backwards, away from you. A new matrix appears, T, on what was the bottom of the block before you toppled it, as shown in Figure 4.21, where the old recognition table is still visible on what is now the top. The new table still has the
+想象一下，这8个表就以**Number · · · Empty**的顺序，分隔成一个个单元，然后以队列加入一个单独的块中（*block*）。现在将这个块的顺序颠倒过来。就有了一个新的矩阵*T*，原本的底部成为了现在的顶部，如图Fig4.21，新表的x轴的位置不变，但y轴变成了非终结符的名称和输入句子的长度。例如，左上角*T<sub>1,Number</sub>*中的数组{1，2，4，7}表示**Number**的长度为这些的生成结果放在位置1。以这种方式为主的解析算法，称为表解析算法（*tabular parsing algorithms*）。很明显，在此转换中，不会新增或删除任何信息，但表解析也有自身的优势和不足。
 
 ![图1](../../img/4.3_1-Fig.4.18.png)
 
@@ -10,6 +10,4 @@ Imagine these 8 tables standing upright in the order Number · · · Empty, perh
 
 ![图3](../../img/4.3_3-Fig.4.20.png)
 
-positions in the input as the horizontal axis, but the vertical axis now consists of names of non-terminals, and the entries are lists of lengths. For example, the list {1,2,4,7} in T1,Number in the top left corner means that productions of Number of these lengths can be recognized in position 1. Parsing algorithms that use mainly this representation are called tabular parsing algorithms. It will be clear that no information is gained or lost in this transformation, but the tabular representation has its own advantages and disadvantages.
-
-The table T is initialized by putting a 1 in all entries Ti,A where the input has a token t in position i and the grammar has a rule A→t. There are two ways to fill the rest of the table, top-down and bottom-up.
+表*T*在将**1**放入所有输入*T<sub>i,A</sub>*（输入中有一个令牌*T*位于位置*i*，且语法为*A→t*）时进行初始化。有两个方法可以填充表的剩余部分，自顶向下和自底向上。

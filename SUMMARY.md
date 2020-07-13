@@ -99,6 +99,7 @@
       * [4.2.6 消除CNF转换的影响](ebook/4/2/6.md)
       * [4.2.7 CYK的简短回顾](ebook/4/2/7.md)
       * [4.2.8 从CYK解析获取解析林语法](ebook/4/2/8.md)
+   * [4.3 表解析](ebook/4/3/README.md)
 * [5 正则语法与有限状态](ebook/5/README.md)
    * [5.1 正则语法的应用](ebook/5/1/README.md)
       * [5.1.1 CF解析中的正则语言](ebook/5/1/1.md)
