@@ -103,6 +103,7 @@
       * [4.3.1 自顶向下表解析](ebook/4/3/1.md)
       * [4.3.2 自底向上表解析](ebook/4/3/2.md)
    * [4.4 结语](ebook/4/4/README.md)
+   * [问题](ebook/4/Problems/problems.md)
 * [5 正则语法与有限状态](ebook/5/README.md)
    * [5.1 正则语法的应用](ebook/5/1/README.md)
       * [5.1.1 CF解析中的正则语言](ebook/5/1/1.md)
