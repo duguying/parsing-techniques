@@ -12,7 +12,7 @@
 
 - b) 设计一个CYK解析器，要求同上。
 
-**问题4.3**：从语法中去掉ε规则将会很大程度的改变语法，在解析过程中必须要花大力气来恢复这种破坏。通过将删除的ε规则合并到修改后的语法中可以省掉一些麻烦，如下所示。给定一个语法**S--->aBc, B--->b|ε**，我们先将其转换为“AND-OR”形式，将原本的右侧记为非终结符。（只有AND规则和OR规则两种的语法即属于AND-OR形式，AND规则即语法符号是并列关系，OR规则即非终结符是择其一关系，并且对于每一个非终结符而言，同时只有一个规则存在。）上面的语法就成为了**S--->aBc, B--->B<sub>b</sub>|B<sub>ε</sub>, B<sub>b</sub>--->b, B<sub>ε</sub>--->ε**。接下来替换所有为空的OR规则（举例中**B**的规则）：**S--->S<sub>aB<sub>b</sub>c</sub>|S<sub>aB<sub>ε</sub>c</sub>, S<sub>aB<sub>b</sub>c</sub>--->aB<sub>b</sub>c, S<sub>aB<sub>ε</sub>c</sub>--->aB<sub>ε</sub>c, B<sub>b</sub>--->b, B<sub>ε</sub>--->ε**。接下里替换*A → ε*形式的规则：**S--->S<sub>aB<sub>b</sub>c</sub>|S<sub>aB<sub>ε</sub>c</sub>, S<sub>aB<sub>b</sub>c</sub>--->aB<sub>b</sub>c, S<sub>aB<sub>ε</sub>c</sub>--->ac, B<sub>b</sub>--->b**。在我们解析**S<sub>aB<sub>ε</sub>c</sub>--->ac**时，*S*的角标就是真正的右侧。用解析器将这个想法细化为一个完整的算法。
+**问题4.3**：从语法中去掉ε规则将会很大程度的改变语法，在解析过程中必须要花大力气来恢复这种破坏。通过将删除的ε规则合并到修改后的语法中可以省掉一些麻烦，如下所示。给定一个语法**S--->aBc, B--->b|ε**，我们先将其转换为“AND-OR”形式，将原本的右侧记为非终结符。（只有AND规则和OR规则两种的语法即属于AND-OR形式，AND规则即语法符号是并列关系，OR规则即非终结符是择其一关系，并且对于每一个非终结符而言，同时只有一个规则存在。）上面的语法就成为了**S--->aBc, B--->B<sub>b</sub> |B<sub>ε</sub> , B<sub>b</sub> --->b, B<sub>ε</sub> --->ε**。接下来替换所有为空的OR规则（举例中**B**的规则）：**S--->S<sub>a$$B_{b}$$c</sub>|S<sub>a$$B_{\xi }$$c</sub>, S<sub>a$$B_{b}$$c</sub>--->aB<sub>b</sub>c, S<sub>a$$B_{\xi }$$c</sub>--->aB<sub>ε</sub>c, B<sub>b</sub>--->b, B<sub>ε</sub>--->ε**。接下里替换*A → ε*形式的规则：**S--->S<sub>a$$B_{b}$$c</sub>|S<sub>a$$B_{\xi }$$c</sub>, S<sub>a$$B_{b}$$c</sub>--->aB<sub>b</sub>c, S<sub>a$$B_{\xi }$$c</sub>--->ac, B<sub>b</sub>--->b**。在我们解析**S<sub>a$$B_{\xi }$$c</sub>--->ac**时，*S*的角标就是真正的右侧。用解析器将这个想法细化为一个完整的算法。
 
 **问题4.4**：从下面的语法中删除单元规则：
 
