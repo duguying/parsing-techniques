@@ -110,6 +110,7 @@
       * [5.1.2 拥有无限存储的系统](ebook/5/1/2.md)
       * [5.1.3 模式搜索](ebook/5/1/3.md)
       * [5.1.4 SGML和XML验证](ebook/5/1/4.md)
+   * [5.2 Producing from a Regular Grammar](ebook/5/2/README.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
