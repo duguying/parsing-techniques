@@ -1,27 +1,27 @@
-# 5.2 Producing from a Regular Grammar
+# 5.2 常规语法的生成物
 
-When producing from a regular grammar, the producer needs to remember only one thing: which non-terminal is next. We shall illustrate this and further concepts using the simple regular grammar of Figure 5.6. This grammar produces sentences consisting of an a followed by an alternating sequence of bs and cs followed by a terminating a. For the moment we shall restrict ourselves to regular grammars in standard notation; further on we shall extend our methods to more convenient forms.
+当从常规语法生成时，生产者需要记住一点：下一个非终结符是哪个。我们将用图Fig5.6的简单常规语法来说明这一点以及证明更进一步的概念。此语法生成一个由**a**组成的句子，后面跟着**b**和**c**交替序列，最后由一个终结符**a**结束。到目前为止，我们的讨论都限制在标准符号的常规语法范围；接下来我们将扩宽我们的视野以寻找更便捷的形式。
 
-The one non-terminal the producer remembers is called its state and the producer is said to be in that state. When a producer is in a given state, for example A, it chooses one of the rules belonging to that state, for example A--->bC, produces the b and moves to state C. Such a move is called a state transition, and for a rule P→tQ is written P t→ Q. A rule without a non-terminal in the right-hand side, for example C--->a, corresponds to a state transition to the accepting state; for a rule P →t it is written P t→ ♦, where ♦ is the accepting state.
+生产者标记的非终结符称为它本身的状态，并且该生产者被认为就是处于该状态。当生产者处于给定状态（例如**A**）时，它会选择属于该状态的一个规则（例如**A--->bC**），生成**b**之后状态变为**C**。这种变化称为状态转移，对于规则*P→tQ*写作*P $$\overset{t}{\rightarrow}$$ Q*，一个右侧没有非终结符的规则（例如**C--->a**），对应的状态转换到一个可接受状态；对于规则*P →t*将写作*P $$\overset{t}{\rightarrow}$$ $$\lozenge$$*，其中$$\lozenge$$就是可接受状态。
 
 ![图1](../../img/5.2_1-Fig.5.6.png)
 
-It is customary to combine the states and the possible transitions of a producer in a transition diagram. Figure 5.7 shows the transition diagram for the regular grammar of Figure 5.6; we see that, for example, the state transition A b→ C is represented by the arc marked b from A to C. S is the initial state and the accepting state is marked with a ♦ ^1. The symbols on the arcs are those produced by the corresponding move. The producer can stop when it is in an accepting state.
+在*转换图（transition diagram）*中，通常将状态和生产者可能的转换过程组合在一起。图Fig5.7展示了图Fig5.6的常规语法的转换图；例如我们看到**A $$\overset{b}{\rightarrow}$$ C**的状态转换在图中表示为由**A**指向**C**的一条标记**b**的弧线。**S**是初始状态，而可接受状态标记了一个$$\lozenge $$[^1]。弧线上的符号是在相应转换时产生的。当生产者处于可接受状态时，就可以停止了。
 
 ![图2](../../img/5.2_2-Fig.5.7.png)
 
-Like the non-deterministic automaton we saw in Section 3.3, the producer is an automaton, or to be more precise, a non-deterministic finite automaton, NFA or finite-state automaton, FSA. It is called “finite” because it can only be in a finite number of states (5 in this case; 3 bits of internal memory would suffice) and “nondeterministic” because, for example, in state S it has more than one way to produce an a.
+如3.3节我们所见的非确定性自动机，生产者也是一个自动机，或者更确切的说，是非确定性有限状态机、*NFA*或*有限状态机（finite-state automaton）*FSA。称之为“有限”，是由于它只能处于有限的状态中（本例是5种状态；3位（bits）存储就够了），“非确定性”是由于在状态**S**种由不止一种方式来生成**a**。
 
-Regular grammars can suffer from undefined, unproductive and unreachable nonterminals just like context-free grammars, and the effects are even easier to visualize. If the grammar of Figure 5.6 is extended with the rules 
+常规语法可能存在非确定性、非生产性或者非终结符等就像上下文无关语法一样的状况，我们对其所做的分析甚至可能更容易可视化。如果图Fig5.6的语法与下面的规则一起扩展：
 
 ![图3](../../img/5.2_3.png)
 
-we obtain the transition diagram
+我们将获得下面的转换图：
 
 ![图4](../../img/5.2_4.png)
 
-where we can see that no further transitions are defined from D, which is the actual meaning of saying that D is undefined; that E, although being defined, literally has no issue; and that F has no incoming arrows.
+从中我们能看出**D**不会产生进一步的转换，也就是说**D**是无定义的；虽然**E**是有定义的，但也没有产生其他的；而F没有指向其的箭头。
 
-The same algorithm used for cleaning CF grammars (Section 2.9.5) can be used to clean a regular grammar. Unlike CF grammars, regular grammars and finite-state automata can be minimized: for a given FS automaton A, a FS automaton can be constructed that has the least possible number of states and still recognizes the same language as A. An algorithm for doing so is given in Section 5.7.
+与预处理CF语法时相同的算法（2.9.5节）也可以用来预处理常规语法。与CF语法不同的是，常规语法和有限状态机可能更小：对于给定的FS状态机A，可以构造出具有最少状态数但同样可以识别与A相同语言的FS状态机。在5.7节将会给出一个可以做到这样的算法。
 
-[1] Another convention to mark an accepting state is by drawing an extra circle around it; since we will occasionally want to explicitly mark a non-accepting state, we do not use that convention.
+[^1]: 另一种标记可接受状态的方式是围绕它绘制一个额外的圆；由于我们也需要显示标记不可接受状态，在此我们不采用这个方式。
