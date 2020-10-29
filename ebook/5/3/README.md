@@ -1,9 +1,9 @@
 # 5.3 使用常规语法进行解析
 
-The above automaton for producing a sentence can in principle also be used for parsing. If we have a sentence, for example, abcba, and want to check and parse it, we can view the above transition diagram as a maze and the (tokens in the) sentence as a guide. If we manage to follow a path through the maze, matching symbols from our sentence to those on the walls of the corridors as we go, and end up in ♦ exactly at the end of the sentence, we have checked the sentence. See Figure 5.8, where the path is shown as a dotted line. The names of the rooms we have visited form the backbone of the parse tree, which is shown in Figure 5.9.
+上述用于生成句子的自动机原则上也可以用于解析。假如我们有一个句子，**abcba**，然后我们想要检查并解析它，那么我们就可以将上面的转换图视为一个迷宫，然后句子（中的令牌）视为一个向导。如果我们设法找到一条穿过迷宫的路径，那就将我们检查过的句子中的符号与迷宫墙上的标记匹配起来，并在末尾以♦结束。如图Fig5.8，其中路线显示为虚线。我们访问过的空间是解析树的主干，如图5.9所示。
 
-But finding the correct path is easier said than done. How did we know, for example, to turn left in room S rather than right? Of course we could employ general maze-solving techniques (and they would give us our answer in exponential time) but a much simpler and much more efficient answer is available here: we split ourselves in two and head both ways. After the first a of abcba we are in the set of rooms {A, B}. Now we have a b to follow; from B there are no exits marked b, but from A there are two, which lead to B and C. So we are now in rooms {B C}. Our path is now more difficult to depict but still easy to linearize, as shown in Figure 5.10.
+但是找到正确的路径，说起来容易做起来难。例如，我们怎么知道在**S**处应该左转而不是右转？当然我们可以采取惯常的迷宫解决法（时间消耗为指数级），但其实有一个更简单高效的方法：我们兵分两路，各走一边。在句子**abcba**的第一个**a**之后，我们就有了两个空间集合 **{A,B}** 。接下来是**b**；**B**之后没有**b**了，但是**A**之后还有两个选择**B**和**C**。因此我们有了集合 **{B,C}** 。我们的路径现在更难描述了但是依旧还是可以线性化，如图5.10所示。
 
 ![图1](../../img/5.3_1.png)
 
-We can find the parsing by starting at the end and following the pointers backwards: ♦ <--- C <--- A <--- B <--- A <--- S. If the grammar is ambiguous the backward pointers may bring us to a fork in the road: an ambiguity has been found and both paths have to be followed separately to find both parsings. With regular grammars, however, one is often not interested in the parse, but only in the recognition: the fact that the input is correct and it ends here suffices.
+我们可以通过从末尾开始，向后指针向前指就有了：**♦ <--- C <--- A <--- B <--- A <--- S**。如果语法不明确，那这样的方法指针可能会将我们带到错误的方向：已经发现的歧义处必须单独处理以得到两条路径。但是对于常规语法，人们通常没兴趣去解析它，而只对识别感兴趣：输入正确并在适当的地方结尾，这就够了。
