@@ -113,7 +113,7 @@
    * [5.2 常规语法的生成物](ebook/5/2/README.md)
    * [5.3 使用常规语法进行解析](ebook/5/3/README.md)
       * [5.3.1 用状态替换集合](ebook/5/3/1.md)
-      * [5.3.2 ε-Transitions and Non-Standard Notation](ebook/5/3/2.md)
+      * [5.3.2 ε转换和非标准符号](ebook/5/3/2.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
