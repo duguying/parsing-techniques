@@ -1,8 +1,8 @@
-# 5.5 Manipulating Regular Languages
+# 5.5 常规语言的操作
 
-In Section 2.10 we discussed the set operations “union”, “intersection”, and “nega- tion” on CF languages, and saw that the latter two do not always yield CF languages. For regular languages the situation is simpler: these set operations on regular lan- guages always yield regular languages.
+在第2.10节中，我们讨论了CF语言上的操作“union”，“intersection”，“negation”，并发现后面两种并不一定会产生CF语言。对于常规语言来说，情况更简单：这些常规语言的操作集合都可以得到常规语言。
 
-Creating a FS automaton for the union of two regular languages defined by the FS automata A1 and A2 is trivial: just create a new start state and add ε-transitions from that state to the start states of A1 and A2. If need be the ε-transitions can then be removed as described in Section 5.3.1.
+为FS自动机A1和A2定义的两个联合常规语言创建一个FS自动机很简单：只需要创建一个新的起始状态，并将ε转换从该状态添加到A1和A2的起始状态。如果需要ε转换可以去掉，如5.3.1所述。
 
 There is an interesting way to get the negation (complement) of a regular lan- guage L defined by a FS automaton, provided the automaton is ε-free. When an automaton is ε-free, each state t in it shows directly the set of tokens Ct with which an input string that brings the automaton in state t can continue: Ct is exactly the set of tokens for which t has an outgoing transition. This means that if the string contin- ues with a token which is not in Ct , the string is not in L, and so we may conclude it is in ¬L. Now we can “complete” state t by adding outgoing arrows on all tokens not in Ct and lead these to a non-accepting state, which we will call s−1. If we perform this completion for all states in the automaton, including s−1, we obtain a so-called complete automaton, an automaton in which all transitions are defined.
 
