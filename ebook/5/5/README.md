@@ -2,28 +2,28 @@
 
 在第2.10节中，我们讨论了CF语言上的操作“union”，“intersection”，“negation”，并发现后面两种并不一定会产生CF语言。对于常规语言来说，情况更简单：这些常规语言的操作集合都可以得到常规语言。
 
-为FS自动机A1和A2定义的两个联合常规语言创建一个FS自动机很简单：只需要创建一个新的起始状态，并将ε转换从该状态添加到A1和A2的起始状态。如果需要ε转换可以去掉，如5.3.1所述。
+为FS自动机*A<sub>1</sub>*和*A<sub>2</sub>*定义的两个联合常规语言创建一个FS自动机很简单：只需要创建一个新的起始状态，并将ε转换从该状态添加到*A<sub>1</sub>*和*A<sub>2</sub>*的起始状态。如果需要ε转换可以去掉，如5.3.1所述。
 
-There is an interesting way to get the negation (complement) of a regular lan- guage L defined by a FS automaton, provided the automaton is ε-free. When an automaton is ε-free, each state t in it shows directly the set of tokens Ct with which an input string that brings the automaton in state t can continue: Ct is exactly the set of tokens for which t has an outgoing transition. This means that if the string contin- ues with a token which is not in Ct , the string is not in L, and so we may conclude it is in ¬L. Now we can “complete” state t by adding outgoing arrows on all tokens not in Ct and lead these to a non-accepting state, which we will call s−1. If we perform this completion for all states in the automaton, including s−1, we obtain a so-called complete automaton, an automaton in which all transitions are defined.
+有一个有趣的方法来获取由FS自动机定义的常规语言*L*的反面（补充），前提是自动机是非ε的。当自动机是非ε时，其中的每个状态*t*都直接显示令牌集*C<sub>t</sub>*，其中使自动机状态为*t*的输入可以继续：*C<sub>t</sub>*是*t*的传出转换的令牌集。这意味着如果字符串继续带有不再*C<sub>t</sub>*中的令牌，那么这个字符串不再*L*中，因此我们得出结论此字符串为*¬L*。现在我们可以通过在所有不在*C<sub>t</sub>*中的令牌上添加传出箭头（并将这些箭头引导到非接受状态，我们称之为*s<sub>-1</sub>*）来完成状态*t*。如果我们对自动机（包括*s<sub>-1</sub>*）的所有状态都进行这样的补全，我们将获得一个完全自动机，即所有转换都定义好了的自动机。
 
-The complete version of the automaton of Figure 5.7 is shown in Figure 5.20, where the non-accepting state is marked with a ✘.
+图Fig5.7的自动机的完整版本如图Fig5.20所示，其中非接受状态标记为✘。
 
 ![图1](../../img/5.5_1-Fig.5.20.png)
 
-The importance of a complete automaton lies in the fact that it never gets stuck on any (finite) input string. For those strings that belong to the language L of the au- tomaton, it ends in an accepting state; for those that do not it ends in a non-accepting state. And this immediately suggests how to get an automaton for the complement (negative) of L: swap the status of accepting and non-accepting states, by making the accepting states non-accepting and the non-accepting states accepting!
+一个完整的自动机的重要性在于它永远不会在卡在任何（有限的）输入字符串上。对于属于自动机语言*L*的字符串，它以可接受状态结束；对于不属于自动机语言的字符串，它以非接受状态结束。这就建议获取*L*的一个自动机补全（反向）：交换可接受状态和非可接受状态，通过让可接受状态变为不可接受，非接受状态变为可接受来完成。
 
-Note that completing the automaton has damaged its error detection properties, in that it will not reject an input string at the first offending character but will process the entire string and only then give its verdict.
+注意，补全自动机已经破坏了它的异常检测属性，因为它不会拒绝一个首字符有问题的输入字符串，然后在完成所有的操作后在返回。
 
-The completion process requires the automaton to be ε-free. This is easily achieved by making it deterministic, as described on page 145, but that may be overkill. See Problem 5.4 for a way to remove the ε-transitions only.
+补全过程要求自动机是非ε的。通过其确定性，这很容易实现，如第145页所述，但可能有些过度了。有关仅删除ε转换，请见问题5.4。
 
-Now that we have negation of FSAs, constructing the intersection of two FSAs seems easy: just negate both automata, take the union, and negate the result, in an application of De Morgan’s Law p ∩ q = ¬((¬ p) ∪ (¬q)). But there is a hitch here. Constructing the negation of an FSA is easy only if the automaton is ε-free, and the union in the process causes two ε-transitions in awkward positions, making this “easy” approach quite unattractive.
+现在我们有了FSA的反向自动机，构建两个FSA的交集似乎很容易：只要联合两个自动机，取交集的结果在取非即可，适用摩根定律*p ∩ q = ¬((¬ p) ∪ (¬q))*。但有一个问题。只有当自动机是非ε的，并且取交集过程中将两个ε转换处于非常特殊的位置时，取交集才是容易的，这使得这种方法并不是很让人喜欢。
 
-Fortunately there is a simple trick to construct the intersection of two FS automata that avoids these problems: run both automata simultaneously, keeping track of their two states in one single new state. As an example we will intersect automaton A1, the automaton of Figure 5.7, with an FSA A2 which requires the input to con- **tain the sequence ba. A2 is represented by the regular expression . ba. . It needs 3 states, which we will call 1 (start state), 2 and ♦ (accepting state); it has the following [abc] b a [abc] transitions: 1 → 1, 1→2, 2→♦, ♦ → ♦.
+好在构建两个FS自动机的交集可以避免这些问题：同时运行两个自动机，在一个新状态下同时追踪两个自动机的状态。例如，我们会将图Fig5.7的自动机*A<sub>1</sub>*和一个FSA *A<sub>2</sub>*（要求输入包含序列 **.<sup> *</sup>ba.<sup> *</sup>** ）取交集。它需要3个状态，我们称之为1（起始态），2和♦（接受态）；他有以下转换：**$$1\overset{[abc]}{\rightarrow}1$$**，**$$1\overset{b}{\rightarrow}2$$**，**$$2\overset{a}{\rightarrow}\lozenge$$**，**$$\lozenge \overset{[abc]}{\rightarrow}\lozenge$$**。
 
-We start the intersection automaton A1 ∩ A2 in the combined state S1, which is composed of the start state S of A1 and the start state 1 of A2. For each transition P1 →t Q1 in A1 and for each transition P2 →t Q2 in A2 we create a transition (P1P2) →t (Q1Q2) in A1 ∩ A2. This leads to the state tree in Figure 5.21(a); the corresponding FSA is in (b). We see that it is similar to that in Figure 5.7, except that the transition B→cC is missing: the requirement that the string should contain the sequence ba removed it.
+我们在组合状态**S1**中取自动机*A<sub>1</sub>*和*A<sub>2</sub>*的交集*A<sub>1</sub> ∩ A<sub>2</sub>*，**S1**状态由*A<sub>1</sub>*的起始态**S**和*A<sub>2</sub>*的起始态**1**组成。对于*A<sub>1</sub>*中每一个 *$$P_{1}\overset{t}{\rightarrow}Q_{1}$$*转换，和*A<sub>2</sub>*中每一个 *$$P_{2}\overset{t}{\rightarrow}Q_{2}$$*转换，在*A<sub>1</sub> ∩ A<sub>2</sub>*中我们创造了一种新的转换 *$$(P_{1}P_{2})\overset{t}{\rightarrow}(Q_{1}Q_{2})$$* 。这为我们带来了图Fig5.21（a）的状态树；对应的FSA见（b）。可以看到它与图Fig5.7的类似，除了缺少了 **$$B\overset{t}{\rightarrow}C$$**：由于要求字符串包含**ba**序列因此删除了它。
 
 ![图2](../../img/5.5_2-Fig.5.21.png)
 
-In principle, the intersection of an FSA with n states and one with m states can require n × m states, but in practice something like c × (n + m) for some small value of c is more usual.
+原则上，FSA与*n*种状态的交集和与*m*种状态的交集，可能需要*n × m*种状态，但实际上像*c × (n + m)*这种，通常当*c*值较小时其才相等。
 
-Conversely, sometimes a complex FSA can be decomposed into the intersection of two much simpler FSAs, with great gain in memory requirements, and sometimes it cannot. There is unfortunately little theory on how to do this, though there are some heuristics; see Problem 5.7. The process is also called “factorization”, but that is an unfortunate term, since it suggests the same uniqueness of factorization we find in integers, and the decomposition of FSAs is not unique.
+相反，一个复杂的FSA可以拆分为两个简单FSA的交集，这需要更大的内存，但有时也不能进行拆分。但不幸的是鲜有关于如何进行拆分的论文，只有一些思考：参见问题5.7。这个过程也称为“分解（factorization）”，但这也意味着一些问题，由于它表示我们找到的分解因子具有相同的特性，因此这意味着FSA的分解并不唯一。
