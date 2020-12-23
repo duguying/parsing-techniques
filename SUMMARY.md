@@ -118,6 +118,7 @@
       * [5.4.1 正则表达式产生的常规语法](ebook/5/4/1.md)
       * [5.4.2 来自常规语法的正则表达式](ebook/5/4/2.md)
    * [5.5 常规语言的操作](ebook/5/5/README.md)
+   * [5.6 左规则语言](ebook/5/6/README.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
