@@ -119,6 +119,7 @@
       * [5.4.2 来自常规语法的正则表达式](ebook/5/4/2.md)
    * [5.5 常规语言的操作](ebook/5/5/README.md)
    * [5.6 左常规语言](ebook/5/6/README.md)
+   * [5.7 最小化有限状态自动机](ebook/5/7/README.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
