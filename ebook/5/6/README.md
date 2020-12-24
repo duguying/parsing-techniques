@@ -1,31 +1,31 @@
-# 5.6 左规则语言
+# 5.6 左常规语言
 
-In a left-regular grammar, all rules are of the form A→a or A→Ba where a is a terminal and A and B are non-terminals. Figure 5.22 gives a left-regular grammar equivalent to that of Figure 5.6.
+在左常规语法中，所有规则都是*A→a*或*A→Ba*（其中*a*非终结符，*A*和*B*为非终结符）形式。图Fig5.22给出了与图Fig5.6等效的左常规语法。
 
-Left-regular grammars are often brushed aside as just a variant of right-regular grammars, but their look and feel is completely different. Take the process of pro- ducing a string from this grammar, for example. Suppose we want to produce the sentence abcba used in Section 5.3. To do so we have to first decide all the states we are going to visit, and only when the last one has been decided upon can the first token be produced:
+左常规语法经常被作为右常规语法的变体放在一边，但不论是形式还是给人的感觉都是截然不同的。例如，从语法中生成一个字符串。假设我们要生成5.3节中的句子**abcba**。为此，我们首先需要确定即将访问的所有状态，并且只有当最后一个状态也确定之后，才能生成第一个令牌：
 
 ![图1](../../img/5.6_1-Fig.5.22.png)
 
-And once the first token is available, all of them are, and we do not have any choice any more; this is vastly different from producing from a right-regular grammar.
+一旦第一个令牌可用了，那么其他都可以了，并且我们也不再有别的选择了；这与右常规语法的生成过程大相径庭。
 
-Parsing with a left-regular grammar is equally weird. It is easy to see that initially we are in a union of all states {S,A,B,C}, but if we now see an a in the input, we can move over this a in two rules, B->a, and A->a. Suppose we use rule A->a; what state are we in now? The rule specifies no state except A; so what does the move mean?
+解析左常规语法同样很奇特。很容易看到，我们有了所有状态的集合 **{S,A,B,C}**，但如果我们看到在输入中有一个**a**，我们可以在两个规则**B->a**和**A->a**中互移**a**。假设我们使用规则**A->a**；我们将会处于什么状态呢？规则不指定除**A**以外的任何状态；那这样的移动有什么作用呢？
 
-The easy way out is to convert the grammar to a right-regular one (see below in this section), but it is more interesting to try to answer the question what a move over a in A->a means. The only thing we know after such a move is that we have just completed a production of A, so the state we are in can justifiably be described as “A finished”; we will write such a state as Af. And in the same manner the first rule in Figure 5.22 means that when we are in a state Cf and we move over an a we are in a stateSf; this corresponds to a transitionCf→aSf. Then we realize that “S finished” means that we have parsed a complete terminal production of S; so the state Sf is the accepting state ♦ and we see the rightmost transition in Figure 5.7 appear.
+简单的方法是将语法转换为右常规语法（见下文），但尝试寻找**A->a**中移动**a**的意义也是非常有意思的。在这样一个操作之后我们唯一知道的就是，我们刚刚完成了**A**的生成，因此我们所处的状态可以描述为“A完成”；我们将这种状态写作**A<sub>f</sub>**。同样的，图Fig5.22的第一条规则表示，我们处于状态**C<sub>f</sub>**并移动**a**时，我们的状态会是**S<sub>f</sub>**；这就是一个转换**C<sub>f</sub>$$\overset{a}{\rightarrow}$$S<sub>f</sub>**。然后我们就知道“S完成”意味着我们已经解析了**S**的一个完整生成；因此状态**S<sub>f</sub>**就是可接受状态♦，我们可以在图Fig5.7看到最右侧转换。
 
-Now that we have seen that the rule A → Bt corresponds to the transition B f →t Af , and that the rule SS → Bt corresponds to Bf →t ♦, what about rules of the form A → t? After the transition over t we are certainly in the state Af , but where did we start from? The answer is that we have not seen any terminal production yet, so we are in a state ε f , the start state! So the rules A->a and B->a correspond to transitions εf→aAf and εf→aBf, two more components of Figure 5.7. Continuing this way we quickly reconstruct the transition diagram of Figure 5.7, with modified state names:
+现在，我们看到规则*A → Bt*对应于转换*B<sub>f</sub>$$\overset{t}{\rightarrow}$$A<sub>f</sub>*，规则*S<sub>S</sub>→Bt*对应*B<sub>f</sub>$$\overset{t}{\rightarrow}\lozenge$$*，那*A → t*形式的规则呢？结束*t*的转换之后，我们就处于状态*A<sub>f</sub>*，但我们是从哪开始的呢？答案是我们还没看到任何一个终结符产生，因此我们处于状态*ε<sub>f</sub>*，这就是起始符号！因此规则**A->a**和**B->a**对应的转换是 *ε<sub>f</sub>$$\overset{**a**}{\rightarrow}$$**A**<sub>f</sub>* 和 *ε<sub>f</sub>$$\overset{**a**}{\rightarrow}$$**B**<sub>f</sub>* ，图Fig5.7的另外两个部分。接下来我们通过修改状态名称，继续快速重建图Fig5.7的转换图：
 
 ![图1](../../img/5.6_2.png)
 
-This exposes an awkward asymmetry between start state and accepting state, in that unlike the start state the accepting state corresponds to a symbol in the grammar. This asymmetry can be partially removed by representing the start state by a more neutral symbol, for example . We then obtain the following correspondence between our right-regular and left-regular grammar:
+这暴露的初始状态和可接受状态之间的不对称，与初始状态不同，可接受状态对应于语法中的一个符号。这种不对称，可以通过替换为一个更中性的符号部分消除，例如$$\square$$。然后我们就获得了下面介于左正则和右正则之间的语法：
 
 ![图1](../../img/5.6_3.png)
 
-Obtaining a regular expression from a left-regular grammar is simple: most of the algorithm in Section 5.4.2 can be taken over with minimal change. Only the transformation that converts recursion into repetition
+从左正则语法中获取一个正则表达式很简单：5.4.2节中的大多数算法都可以在最小代价下被接管。只需要将转换方式由递归变成重复：
 
 ![图1](../../img/5.6_4.png)
 
-must be replaced by
+必须被替换为：
 
 ![图1](../../img/5.6_5.png)
 
-where β consists of all the alternatives in α, with (R)∗ appended to each of them.This is because A->aA|b yields a*b but A->Aa|b yields ba*.
+其中β‘由所有α的备选项组成，每个都附加上 *(R)<sub>∗</sub>* 。这是因为**A->aA|b**产生**a<sub>* </sub>b**，而**A->Aa|b**产生**ba<sub>* </sub>**。
