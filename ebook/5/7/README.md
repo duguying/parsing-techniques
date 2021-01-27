@@ -1,23 +1,23 @@
 # 5.7 最小化有限状态自动机
 
-Turning an NFA into a DFA usually increases the size of the automaton by a mod- erate factor, perhaps 10 or so, and may occasionally grossly inflate the automaton. Considering that for a large automaton a size increase of a factor of say 10 can pose a major problem; that even for a small table any increase in size is undesirable if the table has to be stored in a small electronic device; and that large inflation factors may occur unexpectedly, it is often worthwhile to try to reduce the number of states in the DFA.
+将NFA转换为DFA通常会在自动机中增加大概10个左右的因子，因而使得自动机变得更大，甚至偶尔会使自动机严重膨胀。考虑到对于大型自动机来说，一个10个数量左右的因子增长可能就是一个大问题了；即使是一个小的表格，如果需要存储在一个小型电子设备中，那么任何大小的增加都是难以接受的；但是大尺寸的因子增加的出现是难以预料的，因此很有必要尝试减少DFA中的状态数量。
 
-The key idea of the DFA minimization algorithm presented here is that we con- sider states to be equivalent until we can see a difference. To this end the algorithm keeps the DFA states in a number of mutually disjoint subsets, a “partition.” A parti- tion of a set S is a collection of subsets of S such that each member of S is in exactly one of those subsets; that is, the subsets have no elements in common and their union is the set S. The algorithm iteratively splits each subset in the partition as long as it can see a difference between states in it.
+此处介绍的DFA最小化算法的关键思想是，在我们看到差异之前我们都将状态视为等效状态。因此该算法将DFA状态保存为多个互不相交的子集（“分区”）。一个集合*S*的*分区*是*S*的子集的集合，*S*的每个元素会处于某个子集中；也就是说，*S*被划分为互不相交的若干个子集。该算法使用迭代的方式划分子集，根据状态的不同来进行划分。
 
-We will use the DFA from Figure 5.23(b) as an example; it can be derived from the NFA in Figure 5.23(a) through the subset algorithm with A = SQ and B = P, and is not minimal, as we shall see.
+我们使用图Fig5.23（b）的DFA为例；它可以通过图Fig5.23（a）中的NFA生成，通过**A = SQ**和**B = P**算法子集，并且不是最小子集，如我们所见。
 
 ![图1](../../img/5.7_1-Fig.5.23.png)
 
-Initially we partition the set of states into two subsets: one containing all the accepting states, the other containing all the other states; these are certainly different. In our example this results in one subset containing states S, B and A, and one subset containing the accepting state ♦.
+最初我们将状态集氛围两个子集：一个包含所有可接受状态，另一个包含所有其他状态；这些肯定是不同的。在我们的示例中，这将带来一个包含状态**S**，**B**和**A**的子集，以及一个包含可接受状态♦的子集。
 
-Next, we process each subset Si in turn. If there exist two states q1 and q2 in Si that on some symbol a have transitions to members of different subsets in the current partition, we have found a difference and Si must be split. Suppose we have q1 →a r1 and q2 →a r2, and r1 is in subset X1 and r2 is in a different subset X2, then Si must be split into one subset containing q1 and all other states qj in Si which have qj →a rj with rj in X1, and a second subset containing the other states from Si. If q1 has no transition on a but q2 does, or vice versa, we have also found a difference and Si must be split as well.
+接下来，我们反过来在处理每个子集*S<sub>i</sub>*。如果*S<sub>i</sub>*存在两个状态*q<sub>1</sub>*和*q<sub>2</sub>*，则在某些符号上，*a*已经转换到现在分区的不同子集的元素上，如此我们找到了不同处那么*S<sub>i</sub>*就必须分离出来。假设我们有*q<sub>1</sub>$$\overset{a}{\rightarrow}$$r<sub>1</sub>*和*q<sub>2</sub>$$\overset{a}{\rightarrow}$$r<sub>2</sub>*，而*r<sub>1</sub>*属于子集*X<sub>1</sub>* *r<sub>2</sub>*属于不同的子集*X<sub>2</sub>*，那么*S<sub>i</sub>*必须被拆分为包含*q<sub>1</sub>*和*S<sub>i</sub>*中其他所有状态*q<sub>j</sub>*（其中满足*q<sub>j</sub>$$\overset{a}{\rightarrow}$$r<sub>j</sub>*，且*r<sub>j</sub>*包含于*X<sub>1</sub>*）的子集，以及另一个包含其余所有来自于*S<sub>i</sub>*的状态的子集。如果*q<sub>1</sub>*在*a*上没有转换但*q<sub>2</sub>*有（或者反过来），那我们也能发现不同，并且*S<sub>i</sub>*依旧要被分割。
 
-In our example, states S and A have transitions on a (to the same state, ♦), but state B does not, so this step results in two subsets, one containing the states S and A, and the other containing state B.
+在我们的例子中，状态**S**和**A**在**a**上存在转换（指向相同状态，♦），但是状态**B**并没有，因此这个步骤将生成两个子集，一个包含状态**S**和**A**，另一个包含状态**B**。
 
-We repeat applying this step to all subsets in the partition, until no subset can be split any more. This will eventually happen, because the total number of subsets is bounded: there can be no more subsets in a partition than there are states in the original DFA, and during the process subsets are never merged. (This is another example of a closure algorithm.)
+我们重复将此步骤应用于分区的所有子集，直到不能在拆分为止。最终一定会是这样，因为子集的数量是有限的：分区中的子集不会比原始DFA中的状态多，并且在整个过程中不会出现合并子集的情况。（这是闭包算法的另一个示例。）
 
-When this process is completed, all states in a subset Si of the resulting partition have the property that for any alphabet symbol a their transition on a ends up in the same subset Si(a) of the partition. Therefore, we can consider each subset to be a single state in the minimized DFA. The start state of the minimized DFA is represented by the subset containing the start state of the original DFA, and the accepting states of the minimized DFA are represented by the subsets containing accepting states of the original DFA. The resulting DFA is, in fact, the smallest DFA that recognizes the language specified by the DFA that we started with. See, for example, Hopcroft and Ullman [391].
+完成这个过程后，生成的分区的子集*S<sub>i</sub>*中的所有状态都有以下属性，对于任何字母符号*a*它们关于*a*的转化结束于分区的相同子集*S<sub>i</sub>(a)*。因此，我们可以认为每个子集是最小化DFA的一个单一状态。最小化DFA的起始状态由包含原始DFA起始状态的子集表示，而最小化DFA的可接受状态由包含原始DFA可接受状态的子集表示。事实上，生成的DFA即为识别我们开始使用的 DFA 指定的语言的最小 DFA。见Hopcroft and Ullman [391]。
 
-In our example we find no further splits, and the resulting DFA is depicted below.
+在我们的示例中，我们已经无法在进行拆分，结果DFA如下图所示。
 
 ![图2](../../img/5.7_2.png)
