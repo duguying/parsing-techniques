@@ -1,0 +1,7 @@
+# 5.9 Semantics in FS Systems
+
+In FS systems, semantic actions can be attached to states or to transitions. If the semantics is attached to the states, it is available all the time and is static. It could control an indicator on some panel of some equipment, or keep the motor of an elevator running. Semantics associated with the states is also called Moore semantics (Moore [136]).
+
+If the semantics is attached to the transitions, it is available only at the moment the transition is made, in the form of a signal or procedure call; it is dynamic and transitory. Such a signal could cause a plastic cup to drop in a coffee machine or shift railroad points; the stability, staticness, is then provided by the physical construction of the equipment. And a procedure call could tell the lexical analyser in a compiler that a token begin has been found. Semantics associated with transitions is also called Mealy semantics (Mealy [134]).
+
+There are many variants of transition-associated semantics. The signal can come when specific transition si →t s j occurs (Mealy [134]); when a specific token causes a specific state to be entered (∗ →t s j , where ∗ is any state); when a specific state is entered (∗ →∗ s j , McNaughton and Yamada [137]); when a specific state is left (s j →∗ ∗); etc. Not much has been written about these differences. Upon reading a paper it is essential to find out which convention the author(s) use. In practical situations it is usually self-evident which variant is the most appropriate.
