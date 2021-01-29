@@ -1,4 +1,4 @@
-# 5.9 Semantics in FS Systems
+# 5.9 FS系统中的语义
 
 In FS systems, semantic actions can be attached to states or to transitions. If the semantics is attached to the states, it is available all the time and is static. It could control an indicator on some panel of some equipment, or keep the motor of an elevator running. Semantics associated with the states is also called Moore semantics (Moore [136]).
 

@@ -123,6 +123,7 @@
    * [5.8 自顶向下正则表达式识别](ebook/5/8/README.md)
       * [5.8.1 识别器](ebook/5/8/1.md)
       * [5.8.2 评价](ebook/5/8/2.md)
+   * [5.9 FS系统中的语义](ebook/5/9/README.md)
 * [6 一般的有向自顶向下解析](ebook/6/README.md)
    * [6.1 模仿最左推导](ebook/6/1/README.md)
    * [6.2 下推自动机](ebook/6/2/README.md)
