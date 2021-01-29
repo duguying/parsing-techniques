@@ -1,7 +1,7 @@
 # 5.9 FS系统中的语义
 
-In FS systems, semantic actions can be attached to states or to transitions. If the semantics is attached to the states, it is available all the time and is static. It could control an indicator on some panel of some equipment, or keep the motor of an elevator running. Semantics associated with the states is also called Moore semantics (Moore [136]).
+在FS系统中，语义操作可以附加到状态或转换中。如果语义附加在状态中，则它一直都是有效的且是静态的。它可以控制某些设备面板上的指示器，或者保持电梯电机的运行。与状态相关联的语义也称为Moore语义（Moore [136]）。
 
-If the semantics is attached to the transitions, it is available only at the moment the transition is made, in the form of a signal or procedure call; it is dynamic and transitory. Such a signal could cause a plastic cup to drop in a coffee machine or shift railroad points; the stability, staticness, is then provided by the physical construction of the equipment. And a procedure call could tell the lexical analyser in a compiler that a token begin has been found. Semantics associated with transitions is also called Mealy semantics (Mealy [134]).
+如果语义附加到转换中，则它仅在转换时以信号或过程调用的形式出现；它是动态的也是瞬时的。这个信号可以在咖啡机上放下一个纸杯或者切换铁路线；它的稳定性和静态性，由设备的物理结构来提供。过程调用可以告诉编译器中的词法分析器，令牌开始已经找到。与转换相关的语义也称为Mealy语义（Mealy [134]）。
 
-There are many variants of transition-associated semantics. The signal can come when specific transition si →t s j occurs (Mealy [134]); when a specific token causes a specific state to be entered (∗ →t s j , where ∗ is any state); when a specific state is entered (∗ →∗ s j , McNaughton and Yamada [137]); when a specific state is left (s j →∗ ∗); etc. Not much has been written about these differences. Upon reading a paper it is essential to find out which convention the author(s) use. In practical situations it is usually self-evident which variant is the most appropriate.
+转换相关的语义由许多变体。当特定的转换*s<sub>i</sub> $$\overset{t}{\rightarrow}$$ s<sub>j</sub>*出现（Mealy [134]）时，信号会出现；当特定令牌导致输入一个特定状态时（*∗ $$\overset{t}{\rightarrow}$$ s<sub>j</sub>*，其中*是任意状态）；当输入一个特定状态（ *∗ $$\overset{t}{\rightarrow}$$ s<sub>j</sub>*，McNaughton and Yamada [137]）；当离开特定状态时（s<sub>j</sub> $$\overset{*}{\rightarrow}$$ ∗）；等等。关于这些差异不需要写太多。因此在阅读论文时，弄明白作者使用的那种约定很重要。当然通常情况下，哪种最合适就用哪种。
