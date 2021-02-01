@@ -1,17 +1,19 @@
 # 5.10 使用有限状态自动机快速文本搜索
 
-Suppose we are looking for the occurrence of a short piece of text, for example, a word or a name (the “search string”) in a large piece of text, for example, a dictionary or an encyclopedia. One naive way of finding a search string of length n in a text would be to try to match it to the characters 1 to n; if that fails, shift the pattern one position and try to match against characters 2 to n + 1, etc., until we find the search string or reach the end of the text. This process is, however, costly, since we may have to look at each character n times.
+假设我们正在寻找一个短文本，例如一个单词或一个名称（被搜索的字符串），在一个很长的文本中例如字典或百科全书。查找长度*n*字符串的一个傻办法是尝试匹配字符串从1到*n*：如果失败，那就整体后移一位即2到*n*+1等等，直到我们找到目标字符串或者直到搜索完全部字符串。但是这个方法耗时极高，因为每个字符都要过*n*次搜索。
 
-Finite automata offer a much more efficient way to do text search. We derive a DFA from the string, let it run down the text and when it reaches an accepting state, it has found the string. Assume for example that the search string is ababc and that the text will contain only as, bs and cs. The NFA that searches for this string is shown in Figure 5.24(a); it was derived as follows. At each character in the text there are two possibilities: either the search string starts there, which is represented by the chain of states going to the right, or it does not start there, in which case we have to skip the present character and return to the initial state. The automaton is non-deterministic, since when we see an a in state A, we have two options: to believe that it is the start of an occurrence of ababc or not to believe it.
+有限自动机提供了一个更有效的文本搜索方法。我们从字符串中生成一个DFA，让它来操作字符串，让它遇到一个可接受状态时，那么就找到目标字符串了。例如，假设搜索字符串是**ababc**，且文本仅包含**a**、**b**和**c**。搜索此字符串的NFA如图Fig5.24（a）所示；推导过程见下面。
 
 ![图1](../../img/5.10_1-Fig.5.24.png)
 
-Using the traditional techniques, this NFA can be used to produce a state tree (b) and then a DFA (c). Figure 5.25 shows the states the DFA goes through when fed the text aabababca. We see that we have implemented superstring recognition, in which a substring of the input is recognized as matching the grammar rather than the entire input. This makes the input a superstring of a string in the language, hence the name.
+文本中的每个字符串都有两种可能路径：如果搜索从这里开始，那该字符串由右向状态练表示；或者搜索不从这里开始，那我们就要跳过现在的字符并回到初始化状态。自动机是非确定性的，因为我们可以在状态**A**中找到**a**，那我们就有两种选择：这是**ababc**这个字符串在全文开始的位置，或者认为它不是。
+
+使用传统的方式，那这个NFA可以用来生成一个状态树 *（b）*和一个DFA *（c）*。图Fig5.25展示了DFA在输入文本**aabababca**后的状态转换过程。可以看到，我们实现了*超字符串识别（superstring recognition）*，即输入的子字符串被识别为匹配的是语法而不是输入。这使得输入成为该语言的字符串中的一个超级字符串，因此而命名。
 
 ![图2](../../img/5.10_2-Fig.5.25.png)
 
-This application of finite-state automata is known as the Aho and Corasick bibli- ographic search algorithm (Aho and Corasick [141]). Like any DFA, it requires only a few machine instructions per character. As an additional bonus it will search for several strings for the price of one. The DFA corresponding to the NFA of Figure 5.26 will search simultaneously for Kawabata, Mishima and Tanizaki. Note that three different accepting states result, ♦K, ♦M and ♦T.
+这种有限状态自动机的应用被称为*the Aho and Corasick bibliographic search algorithm*（Aho and Corasick [141]）。与任何DFA一样，每个字符只需要几个计算机指令。一个额外的收获是，对多个字符进行搜索的消耗与单个字符相当。与图Fig5.26对应的DFA将同时搜索**Kawabata**,**Mishima**和**Tanizaki**。注意，有三个不同的可接受状态，$$\lozenge_{K}$$，$$\lozenge_{M}$$和$$\lozenge_{T}$$。
 
 ![图3](../../img/5.10_3-Fig.5.26.png)
 
-The Aho and Corasick algorithm is not the last word in string search. It faces stiff competition from the Rabin-Karp algorithm (Karp and Rabin [145]) and the Boyer-Moore algorithm (Boyer and Moore [143]). An excellent overview of fast string search algorithms is given by Aho [147]. Watson [149] extends the Boyer- Moore technique, which searches for a single word, so it can search for a regular expression. However fascinating all these algorithms are, they are outside the scope of this book and will not be treated here.
+The Aho and Corasick算法不是字符串搜索的最后一个。同样优秀的算法还有the Rabin-Karp algorithm (Karp and Rabin [145])和the Boyer-Moore algorithm (Boyer and Moore [143])。Aho [147]提供了快速字符串搜索算法的极佳概述。Watson [149]扩展了Boyer-Moore算法（它只能搜索单个单词），使之可以搜索正则表达式。但是无论这些算法有多么棒，它们都不在本书的范围之内，因此大家可以自己去研究，本书不做探讨。
