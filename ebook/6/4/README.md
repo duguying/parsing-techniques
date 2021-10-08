@@ -1,37 +1,39 @@
-# 6.4 消除左递归
+# 6.4 左递归的消除
 
-我们先讨论消除直接左递归的方法。假定&epsilon;-规则和单元规则（unit rule）已经被消除了（见4.2.3.1和4.2.3.2）。现在，令A是一个左递归的非终结符（原文为rule），并且
+我们先讨论消除直接左递归的方法。假定ε规则和单元规则已经被消除了（见4.2.3.1节和4.2.3.2节）。现在，使*A*为一个左递归规则，并且
 
 ![图6.4_1](../../img/6.4_1.png)
 
-是A的所有规则。没有等于&epsilon;的&alpha;<sub>i</sub>，否则我们会有A&rarr;A，一个单元规则。也没有等于&epsilon;的&beta;<sub>j</sub>，否则会有一个&epsilon;-规则。A只用A&rarr;A&alpha;<sub>k</sub>规则生成的句型有这样的形式：
+是*A*拥有的所有规则。没有等于ε的α<sub>i</sub>，否则我们会有*A→A*规则和一个单元规则。也没有等于ε的β<sub>j</sub>，否则会有一个ε-规则。由*A*生成的句型只用*A→Aα<sub>k</sub>*规则，这些句型都有这样的形式：
 
 ![图6.4_2](../../img/6.4_2.png)
 
-并且当A&rarr;&beta;<sub>i</sub>规则使用时，句型不再以A开头，对一些i，和一些k<sub>1</sub>,...,k<sub>j</sub>,它有如下的形式：
+并且当A→β<sub>i</sub>规则使用时，句型不再以A开头，对一些i，和一些k<sub>1</sub>,...,k<sub>j</sub>,它有如下的形式：
 
 ![图6.4_3](../../img/6.4_3.png)
 
-这里j可能为0.同样的句型可以被如下规则生成：
+这里j可能为0.同样的句型也可以用如下规则生成：
 
 ![图6.4_4](../../img/6.4_4.png)
 
-或者，使得没有新的&epsilon;规则重新生成的话：
+或者，不重新引入ε规则生成的话就是这样：
 
 ![图6.4_5](../../img/6.4_5.png)
 
-这里A<sub>head</sub>,A<sub>tail</sub>和A<sub>tails</sub>是新引入的非终结符。没有&alpha;<sub>i</sub>是&epsilon;，所以A<sub>tail</sub>不会推导出&epsilon;，所以A<sub>tails</sub>不是左递归。A可能仍然是左递归的，但不是直接左递归，因为没有&beta;<sub>j</sub>以A开始。然而，它们可能推导出以A开始的句型。
-一般的，消除间接左递归要更复杂。思路就是先将非终结符标号，标为A<sub>1</sub>,A<sub>2</sub>,...,A<sub>n</sub>.现在，对一个左递归非终结符A，有一个推导
+这里*A<sub>head</sub>*,*A<sub>tail</sub>*和*A<sub>tails</sub>*是新引入的非终结符。所有α<sub>i</sub>都不是ε类型，所以*A<sub>tail</sub>*不会推导出ε，所以*A<sub>tails</sub>*不是左递归。不过*A*可能仍然是左递归的，但不是直接左递归，因为没有*β<sub>j</sub>*是以*A*开始，然而它们却可能推导出以*A*开始的句型。
+
+一般来说，消除间接左递归要更复杂。思路就是先将非终结符标号，标为*A<sub>1</sub>,A<sub>2</sub>,...,A<sub>n</sub>*。那么，对一个左递归非终结符A，就有如下推导
 
 ![图6.4_6](../../img/6.4_6.png)
 
-，每时每刻句型的最左边都是非终结符，然后再三地用它的一个右侧替代。每一个非终结符都有一个标号，写作i<sub>1</sub>,i<sub>2</sub>,...,i<sub>m</sub>,于是在推导中我们得到了这么一串数：i<sub>1</sub>,i<sub>2</sub>,...,i<sub>m</sub>,i<sub>1</sub>.现在，如果我们没有任何A<sub>i</sub>&rarr;A<sub>j</sub>&alpha;(j&le;i),这就是不可能的，因为i<sub>1</sub>&lt;i<sub>2</sub>&lt;...&lt;i<sub>m</sub>&lt;i<sub>1</sub>是不可能的。
-现在就要消除这样的规则。我们从A<sub>1</sub>开始。对A<sub>1</sub>，要消除了只是直接递归的规则，我们已经看到了应该怎么做。接着轮到A<sub>2</sub>。每一个有着A<sub>2</sub>&rarr;A<sub>1</sub>&alpha;形式的产生式都要被替代成
+任何时刻句型的最左边都是非终结符，然后每次使用其中一个右侧替代。每一个非终结符都有一个标号，计作*i<sub>1</sub>,i<sub>2</sub>,...,i<sub>m</sub>*，于是在推导中我们得到了这么一串数：*i<sub>1</sub>,i<sub>2</sub>,...,i<sub>m</sub>,i<sub>1</sub>*。现在，如果我们没有任何包含*j</sub>α(j&le;i)*的规则*A<sub>i</sub>→A<sub>*,那这就是不存咋的，因为*i<sub>1</sub>&lt;i<sub>2</sub>&lt;...&lt;i<sub>m</sub>&lt;i<sub>1</sub>*是不存在的。
+
+现在就要消除这种形式的规则。我们从*A<sub>1</sub>*开始。对*A<sub>1</sub>*，要消除了只是直接递归的规则，我们已经看到了应该怎么做。接着轮到*A<sub>2</sub>*。每一个有着*A<sub>2</sub>→A<sub>1</sub>α*形式的产生式都要被替代成如下：
 
 ![图6.4_7](../../img/6.4_7.png)
 
-这里A<sub>1</sub>的规则为
+这里*A<sub>1</sub>*的规则为
 
 ![图6.4_8](../../img/6.4_8.png)
 
-这不可能产生A<sub>2</sub>&rarr;A<sub>1</sub>&gamma;形式的新规则，因为我们已经消除了A<sub>1</sub>的左递归规则，而且&alpha;<sub>i</sub>都不为&epsilon;。接着，我们消除A<sub>2</sub>的直接递归规则。这样对A<sub>2</sub>的工作就结束了。类似的，我们对A<sub>3</sub>到A<sub>n</sub>进行处理，按照总是先替代A<sub>i</sub>&rarr;A<sub>1</sub>&gamma;,再A<sub>i</sub>&rarr;A<sub>2</sub>&delta;等等的顺序。我们必须按照这样的顺序，因为，替换一个A<sub>i</sub>&rarr;A<sub>2</sub>&delta;的规则可能会引入A<sub>i</sub>&rarr;A<sub>3</sub>&gamma;这样的规则，而不会是A<sub>i</sub>&rarr;A<sub>1</sub>&alpha;
+这不可能产生*A<sub>2</sub>→A<sub>1</sub>γ*形式的新规则，因为我们已经消除了*A<sub>1</sub>*的左递归规则，而且*α<sub>i</sub>*都不为ε。接着，我们来处理*A<sub>2</sub>*的直接左递归规则。这样对*A<sub>2</sub>*的工作就结束了。同样，我们对*A<sub>3</sub>*到*A<sub>n</sub>*进行处理，按照总是先替代*A<sub>i</sub>→A<sub>1</sub>γ*,再*A<sub>i</sub>→A<sub>2</sub>δ*等的顺序。我们必须按照这样的顺序，因为替换一个*A<sub>i</sub>→A<sub>2</sub>δ*的规则可能会引入一个*A<sub>i</sub>→A<sub>3</sub>γ*规则，而不是*A<sub>i</sub>→A<sub>1</sub>α*规则。
