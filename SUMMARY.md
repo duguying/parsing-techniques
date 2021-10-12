@@ -136,3 +136,4 @@
    * [6.4 左递归的消除](ebook/6/4/README.md)
    * [6.5 深度优先（回溯）解析器](ebook/6/5/README.md)
    * [6.6 递归下降](ebook/6/6/README.md)
+      * [6.6.1 一个纯粹的方式](ebook/6/6/1.md)
