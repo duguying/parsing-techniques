@@ -9,5 +9,4 @@ steps:
       from_secret: token
   commands:
   - npm install gitbook-cli -g
-  - ./ci.sh compile
   - ./ci.sh deploy
