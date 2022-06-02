@@ -9,11 +9,11 @@ function help() {
 
 function compile() {
     gitbook install
+    WORKDIR=$(pwd)
     cd ..
     pwd
-    ls
-    ls src
-    gitbook build parsing-techniques parsing-techniques-static
+    echo 'WORKDIR: '$WORKDIR
+    gitbook build $WORKDIR parsing-techniques-static
     cd parsing-techniques-static
     tar zcvf parsing-techniques.tar.gz ./*
     du -sh parsing-techniques.tar.gz
