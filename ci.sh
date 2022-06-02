@@ -11,6 +11,7 @@ function compile() {
     gitbook install
     cd ..
     pwd
+    ls
     gitbook build parsing-techniques parsing-techniques-static
     cd parsing-techniques-static
     tar zcvf parsing-techniques.tar.gz ./*
