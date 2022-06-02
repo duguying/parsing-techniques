@@ -3,7 +3,7 @@ name: default
 
 steps:
 - name: compile
-  image: node:16.15.0
+  image: node:7
   environment:
     token:
       from_secret: token
