@@ -27,7 +27,7 @@
       * [2.4.1 短语结构案例](ebook/2/4/1.md)
       * [2.4.2 CS案例](ebook/2/4/2.md)
       * [2.4.3 CF案例](ebook/2/4/3.md)
-   * [2.5 收敛或不收敛](ebook/2/5/README.md)
+   * [2.5 收缩或不收缩](ebook/2/5/README.md)
    * [2.6 生成空语言的语法](ebook/2/6/README.md)
    * [2.7 CF和FS语法的限制](ebook/2/7/README.md)
       * [2.7.1 uvwxy理论](ebook/2/7/1.md)
