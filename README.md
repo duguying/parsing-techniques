@@ -28,11 +28,11 @@
 
 ##### 支付宝
 
-<img src="./ebook/img/donate_alipay.jpg" alt="支付宝" style="width:50%"/>
+<img src="./src/ebook/img/donate_alipay.jpg" alt="支付宝" style="width:50%"/>
 
 ##### 微信
 
-<img src="./ebook/img/donate_wx.png" alt="微信" style="width:50%"/>
+<img src="./src/ebook/img/donate_wx.png" alt="微信" style="width:50%"/>
 
 请各位捐助时备注一下称呼。以便能在列表中记录。感谢！
 

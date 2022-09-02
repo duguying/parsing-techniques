@@ -13,6 +13,7 @@ function compile() {
     echo 'WORKDIR: '$WORKDIR
     cp ./README.md ./src
     cp ./donate.md ./src
+    sed -i 's/src\///g'  ./src/README.md
     mdbook build
     cd book
     tar zcvf parsing-techniques.tar.gz ./*
