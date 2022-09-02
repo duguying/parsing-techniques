@@ -2,3 +2,7 @@ node_modules/
 _book/
 .DS_Store
 *.pdf
+book/
+index.html
+src/README.md
+src/donate.md

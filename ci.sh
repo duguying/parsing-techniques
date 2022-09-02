@@ -8,13 +8,13 @@ function help() {
 }
 
 function compile() {
-    gitbook install
     WORKDIR=$(pwd)
-    cd ..
     pwd
     echo 'WORKDIR: '$WORKDIR
-    gitbook build $WORKDIR parsing-techniques-static
-    cd parsing-techniques-static
+    cp ./README.md ./src
+    cp ./donate.md ./src
+    mdbook build
+    cd book
     tar zcvf parsing-techniques.tar.gz ./*
     du -sh parsing-techniques.tar.gz
 }

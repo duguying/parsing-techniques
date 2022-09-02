@@ -3,11 +3,11 @@ name: default
 
 steps:
 - name: compile
-  image: node:7
+  image: rust
   environment:
     token:
       from_secret: token
   commands:
-  - npm install gitbook-cli -g
+  - cargo install mdbook
   - ./ci.sh compile
   - ./ci.sh deploy
