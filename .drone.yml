@@ -11,3 +11,12 @@ steps:
   - cargo install mdbook
   - ./ci.sh compile
   - ./ci.sh deploy
+- name: flush-dns
+  image: git.duguying.net/duguying/qcloud-dns-tool
+  commands:
+  - qcloud-dns-tool -p "https://parsing-techniques.duguying.net/"
+  environment:
+    SecretId:
+      from_secret: qcloud_sid
+    SecretKey:
+      from_secret: qcloud_skey
