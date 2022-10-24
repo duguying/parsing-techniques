@@ -140,5 +140,8 @@
       * [一个纯粹的方式](ebook/6/6/1.md)
       * [穷举回溯递归下降](ebook/6/6/2.md)
       * [广度优先递归下降](ebook/6/6/3.md)
+   * [有限子句语法](ebook/6/7/README.md)
+      * [Prolog](ebook/6/7/1.md)
+      * [DCG格式](ebook/6/7/2.md)
 -----------
 [捐助](donate.md)
