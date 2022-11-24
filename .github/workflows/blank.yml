@@ -38,3 +38,13 @@ jobs:
         run: |
           ./ci.sh compile
           ./ci.sh deploy
+
+  flush-dns:
+    runs-on: ubuntu-latest
+    container: duguying/qcloud-dns-tool:latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Flush Qcloud DNS
+        run: |
+          qcloud-dns-tool -p "https://parsing-techniques.duguying.net/"
