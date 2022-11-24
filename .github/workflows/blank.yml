@@ -41,6 +41,9 @@ jobs:
 
   flush-dns:
     runs-on: ubuntu-latest
+    env:
+      SECRETID: ${{ secrets.SECRETID }}
+      SECRETKEY: ${{ secrets.SECRETKEY }}
     container: duguying/qcloud-dns-tool:latest
     steps:
       - uses: actions/checkout@v3
