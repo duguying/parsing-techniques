@@ -5,4 +5,5 @@ author = "Rex Lee"
 language = "zh-CN"
 
 [output.html]
-mathjax-support = true
+[output.katex2]
+[preprocessor.katex2]

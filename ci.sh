@@ -15,7 +15,7 @@ function compile() {
     cp ./donate.md ./src
     sed -i 's/src\///g'  ./src/README.md
     mdbook build
-    cd book
+    cd book/html
     tar zcvf parsing-techniques.tar.gz ./*
     du -sh parsing-techniques.tar.gz
 }
