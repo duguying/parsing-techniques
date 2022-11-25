@@ -20,6 +20,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    env:
+      token: ${{ secrets.TOKEN }}
+
     # Docker image
     container: rust:latest
 
