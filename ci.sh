@@ -21,7 +21,6 @@ function compile() {
 }
 
 function deploy() {
-    cd book/html
     curl -X POST https://api.duguying.net/api/deploy/upload -H 'Cache-Control: no-cache' -H 'Token: '$token -H 'name: book' -F file=@parsing-techniques.tar.gz -k
     cd $WORKSPACE
 }

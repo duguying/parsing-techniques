@@ -35,6 +35,7 @@ jobs:
       - name: Install mdbook katex2 processor
         run: |
           cargo install mdbook-katex
+          cargo install mdbook
 
       # Runs a set of commands using the runners shell
       - name: Compile and Deploy
