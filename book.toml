@@ -5,5 +5,5 @@ author = "Rex Lee"
 language = "zh-CN"
 
 [output.html]
-[output.katex2]
-[preprocessor.katex2]
+[output.katex]
+[preprocessor.katex]
