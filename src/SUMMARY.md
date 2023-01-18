@@ -143,5 +143,7 @@
    * [有限子句语法](ebook/6/7/README.md)
       * [Prolog](ebook/6/7/1.md)
       * [DCG格式](ebook/6/7/2.md)
+      * [获取解析树信息](ebook/6/7/3.md)
+      * [运行有限子句语法程序](ebook/6/7/4.md)
 -----------
 [捐助](donate.md)
